@@ -2,6 +2,9 @@ project:
   type: book
   output-dir: _book
 
+execute:
+  freeze: auto
+  
 book:
   title: "ODD Training Material"
   page-footer:
@@ -41,8 +44,6 @@ format:
     theme:
       - cosmo
       - brand
-  pdf:
-    documentclass: scrreprt
 
 editor: visual
 

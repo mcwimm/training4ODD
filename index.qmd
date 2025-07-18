@@ -1,17 +1,9 @@
 # Welcome {.unnumbered}
 
-::: {.callout-warning}
+::: callout-warning
 THIS PAGE IS UNDER CONSTRUCTION....
 :::
 
 > This collection of training materials is based on @grimm2020 and partly comprises the detailed descriptions provided in Appendix S1.
-
-
-Code block
-
-```{r eval=F}
-1 + 1
-```
-
 
 

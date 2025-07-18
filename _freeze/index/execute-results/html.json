@@ -1,0 +1,15 @@
+{
+  "hash": "303a8595e253b8596f9a5434d3688b6f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Welcome {.unnumbered}\n\n::: {.callout-warning}\nTHIS PAGE IS UNDER CONSTRUCTION....\n:::\n\n> This collection of training materials is based on @grimm2020 and partly comprises the detailed descriptions provided in Appendix S1.\n\n\nCode block\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n:::\n\n\n\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
