@@ -1,0 +1,48 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "ODD Training Material"
+  page-footer:
+    left: |
+      ODD Training Material is compiled by TEAM.
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
+  site-url: https://...
+  repo-url: https://...
+  repo-branch: main
+  repo-actions: [edit, issue]
+  
+  chapters:
+    - index.qmd
+    - part: chapters/overview/overview.qmd
+      chapters:
+        - chapters/overview/purpose.qmd
+        - chapters/overview/entities.qmd
+        - chapters/overview/process.qmd
+    - part: chapters/design/design.qmd
+      chapters:
+        - chapters/design/basic.qmd
+        - chapters/design/emergence.qmd
+        - chapters/design/adaptation.qmd
+    - part: chapters/details/details.qmd
+      chapters:
+        - chapters/details/initialization.qmd
+        - chapters/details/input.qmd
+        - chapters/details/submodels.qmd
+    - part: chapters/examples/examples.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

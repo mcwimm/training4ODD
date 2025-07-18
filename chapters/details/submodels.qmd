@@ -1,0 +1,15 @@
+# Submodels
+
+## Idea
+
+Here we briefly describe the idea of this part....
+
+## Guidance
+
+## Checklist
+
+## Examples
+
+### ABM
+
+### Prediction Models

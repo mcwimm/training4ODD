@@ -1,0 +1,45 @@
+# Purpose
+
+## Idea
+
+Here we briefly describe the idea of this part....
+
+## Guidance
+
+**Make the purpose specific, addressing a clear question.** The purpose statement should be specific enough to enable a reader to independently judge a model’s success at achieving this purpose as well as to serve as the primary “filter” for what is and is not in the model: ideally the model should only include entities and mechanisms that are necessary to meet its purpose. If the purpose statement is only general and unspecific, and especially if it lacks patterns for evaluating the model’s usefulness, then it will be difficult to justify (and make) model design decisions. Some ODDs state only that the model’s purpose is to “explore,” “investigate,” or “study” some system or phenomenon, which is not specific enough to assess the model or to determine what the model needs to contain. An imprecise purpose such as this is often an indication that the modeler simply assembled some mechanisms in an ABM and explored its results. Studies like this can be made more scientific by stating the purpose as a clear question such as “To test whether the mechanisms A, B, and C can explain the observed phenomena X, Y, and Z.”
+
+**Include the higher-level purpose**. The purpose statement should also clarify the model’s higher-level purpose: whether it is to develop understanding of the system, or to make specific predictions, etc. Different high-level purposes lead to different model designs. Use the general purposes from the examples of Element 1 we provide below as a guide.
+
+**Tie the purpose to the study’s primary results.** One way to make this statement of model purpose specific enough is to explicitly consider what point you are trying to demonstrate with the model. The statement should allow the readers to clearly judge the extent to which the model is successful. This is closely related to the primary analysis you will conduct with the model. Think about the key graph(s) you will produce in your “Results” section, where you apply the model to your main research question. The model’s purpose should include producing the relationship shown in this graph.
+
+**Define your terms.** If you state that your model’s purpose is (for example) to “predict how the vulnerability of a community to flooding depends on public policy”, you still have not stated a clear model purpose. The term “vulnerability to flooding” could mean many things: drowning, travel delays, property damage, etc.; and “public policy” could refer to zoning, insurance, or emergency response. Be clear about exactly what inputs and results your model addresses.
+
+**Be specific to this version of the model.** To keep the description clear and focused, do not discuss potential future modifications of the model to new purposes or patterns. (Future plans might be described instead in the Discussion section of a publication.) However, if the same model is designed for multiple purposes, those purposes should be described even if they are not addressed in the current publication.
+
+**Do not describe the model yet.** Authors are often tempted to start describing how the model works here in the purpose statement, which is a mistake. Instead, address only the purpose here and then, in subsequent sections, you can tie the model’s design to the purpose by explaining why specific design decisions were necessary for the model’s purpose.
+
+**Make this purpose statement independent.** Model descriptions are typically published in research articles or reports that also include, in their introduction, a statement of the study’s purpose. This ODD element should be independent of any presentation of study purpose elsewhere in the same document, for several reasons: (a) an ODD description should always be complete and understandable by itself, and (b) re-stating the model purpose as specifically as possible always helps modelers (and readers) clarify what should be in the model.
+
+**Use qualitative but testable patterns.** Patterns useful for designing and evaluating ABMs are often general (observed at multiple locations or times) and qualitative. However, using patterns to evaluate a model requires that they be testable: you need a reproducible way to determine whether the model matches the pattern. Making patterns testable can be as simple as stating them as qualitative trends, e.g., that output X increases as variable A decreases. We generally discourage statistical definitions of patterns where the pattern is, in fact, qualitative. There are more appropriate ways of formalizing qualitative patterns, e.g. Thorngate and Edmonds (2013).
+
+**Document the patterns.** A complete description of the patterns used in modeling needs to document why the patterns were selected: what evidence supports them, and what is their role in justifying the purpose? Documenting patterns can range from simply stating them as widespread (or your own) beliefs, to citing multiple empirical studies that observed each pattern. Thorough documentation of several patterns can require substantial text, which could conflict with keeping this “Overview” part of ODD short. In this case, patterns can be thoroughly documented in a separate section of a report or article and summarized in the ODD description; thorough documentation of the patterns in the ODD description is not essential for it to be complete enough to make the model reproducible.
+
+## Checklist
+
+## Examples
+
+### ABM
+
+### Prediction Models
+
+## Test yourself
+
+**Can you identify what is incorrect in the following description of a model's purpose?**
+
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+::: {.callout-caution collapse="true"}
+## Expand To See the Soluation
+
+This is an example of a 'folded' caution callout that can be expanded by the user. You can use \`collapse="true"\` to collapse it by default or \`collapse="false"\` to make a collapsible callout that is expanded by default.
+:::
