@@ -1,0 +1,469 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "ODD Training Material",
+    "section": "",
+    "text": "Welcome\n\n\n\n\n\n\nWarning\n\n\n\nTHIS PAGE IS UNDER CONSTRUCTION….\n\n\n\nThis collection of training materials is based on Grimm (2020) and partly comprises the detailed descriptions provided in Appendix S1.\n\n\n\n\n\nGrimm, Railsback, V. 2020. “The ODD Protocol for Describing Agent-Based and Other Simulation Models: A Second Update to Improve Clarity, Replication, and Structural Realism.” Journal of Artificial Societies and Social Simulation 23 (2). https://doi.org/10.18564/jasss.4259.",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "chapters/overview/overview.html",
+    "href": "chapters/overview/overview.html",
+    "title": "Overview",
+    "section": "",
+    "text": "Here we briefly describe the idea of this part….",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "chapters/overview/purpose.html",
+    "href": "chapters/overview/purpose.html",
+    "title": "1  Purpose",
+    "section": "",
+    "text": "1.1 Idea\nHere we briefly describe the idea of this part….",
+    "crumbs": [
+      "Overview",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Purpose</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/overview/purpose.html#guidance",
+    "href": "chapters/overview/purpose.html#guidance",
+    "title": "1  Purpose",
+    "section": "1.2 Guidance",
+    "text": "1.2 Guidance\nMake the purpose specific, addressing a clear question. The purpose statement should be specific enough to enable a reader to independently judge a model’s success at achieving this purpose as well as to serve as the primary “filter” for what is and is not in the model: ideally the model should only include entities and mechanisms that are necessary to meet its purpose. If the purpose statement is only general and unspecific, and especially if it lacks patterns for evaluating the model’s usefulness, then it will be difficult to justify (and make) model design decisions. Some ODDs state only that the model’s purpose is to “explore,” “investigate,” or “study” some system or phenomenon, which is not specific enough to assess the model or to determine what the model needs to contain. An imprecise purpose such as this is often an indication that the modeler simply assembled some mechanisms in an ABM and explored its results. Studies like this can be made more scientific by stating the purpose as a clear question such as “To test whether the mechanisms A, B, and C can explain the observed phenomena X, Y, and Z.”\nInclude the higher-level purpose. The purpose statement should also clarify the model’s higher-level purpose: whether it is to develop understanding of the system, or to make specific predictions, etc. Different high-level purposes lead to different model designs. Use the general purposes from the examples of Element 1 we provide below as a guide.\nTie the purpose to the study’s primary results. One way to make this statement of model purpose specific enough is to explicitly consider what point you are trying to demonstrate with the model. The statement should allow the readers to clearly judge the extent to which the model is successful. This is closely related to the primary analysis you will conduct with the model. Think about the key graph(s) you will produce in your “Results” section, where you apply the model to your main research question. The model’s purpose should include producing the relationship shown in this graph.\nDefine your terms. If you state that your model’s purpose is (for example) to “predict how the vulnerability of a community to flooding depends on public policy”, you still have not stated a clear model purpose. The term “vulnerability to flooding” could mean many things: drowning, travel delays, property damage, etc.; and “public policy” could refer to zoning, insurance, or emergency response. Be clear about exactly what inputs and results your model addresses.\nBe specific to this version of the model. To keep the description clear and focused, do not discuss potential future modifications of the model to new purposes or patterns. (Future plans might be described instead in the Discussion section of a publication.) However, if the same model is designed for multiple purposes, those purposes should be described even if they are not addressed in the current publication.\nDo not describe the model yet. Authors are often tempted to start describing how the model works here in the purpose statement, which is a mistake. Instead, address only the purpose here and then, in subsequent sections, you can tie the model’s design to the purpose by explaining why specific design decisions were necessary for the model’s purpose.\nMake this purpose statement independent. Model descriptions are typically published in research articles or reports that also include, in their introduction, a statement of the study’s purpose. This ODD element should be independent of any presentation of study purpose elsewhere in the same document, for several reasons: (a) an ODD description should always be complete and understandable by itself, and (b) re-stating the model purpose as specifically as possible always helps modelers (and readers) clarify what should be in the model.\nUse qualitative but testable patterns. Patterns useful for designing and evaluating ABMs are often general (observed at multiple locations or times) and qualitative. However, using patterns to evaluate a model requires that they be testable: you need a reproducible way to determine whether the model matches the pattern. Making patterns testable can be as simple as stating them as qualitative trends, e.g., that output X increases as variable A decreases. We generally discourage statistical definitions of patterns where the pattern is, in fact, qualitative. There are more appropriate ways of formalizing qualitative patterns, e.g. Thorngate and Edmonds (2013).\nDocument the patterns. A complete description of the patterns used in modeling needs to document why the patterns were selected: what evidence supports them, and what is their role in justifying the purpose? Documenting patterns can range from simply stating them as widespread (or your own) beliefs, to citing multiple empirical studies that observed each pattern. Thorough documentation of several patterns can require substantial text, which could conflict with keeping this “Overview” part of ODD short. In this case, patterns can be thoroughly documented in a separate section of a report or article and summarized in the ODD description; thorough documentation of the patterns in the ODD description is not essential for it to be complete enough to make the model reproducible.",
+    "crumbs": [
+      "Overview",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Purpose</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/overview/purpose.html#checklist",
+    "href": "chapters/overview/purpose.html#checklist",
+    "title": "1  Purpose",
+    "section": "1.3 Checklist",
+    "text": "1.3 Checklist",
+    "crumbs": [
+      "Overview",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Purpose</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/overview/purpose.html#examples",
+    "href": "chapters/overview/purpose.html#examples",
+    "title": "1  Purpose",
+    "section": "1.4 Examples",
+    "text": "1.4 Examples\n\n1.4.1 ABM\n\n\n1.4.2 Prediction Models",
+    "crumbs": [
+      "Overview",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Purpose</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/overview/purpose.html#test-yourself",
+    "href": "chapters/overview/purpose.html#test-yourself",
+    "title": "1  Purpose",
+    "section": "1.5 Test yourself",
+    "text": "1.5 Test yourself\nCan you identify what is incorrect in the following description of a model’s purpose?\nLorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\n\n\n\n\n\n\nExpand To See the Soluation\n\n\n\n\n\nThis is an example of a ‘folded’ caution callout that can be expanded by the user. You can use `collapse=“true”` to collapse it by default or `collapse=“false”` to make a collapsible callout that is expanded by default.",
+    "crumbs": [
+      "Overview",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Purpose</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/overview/entities.html",
+    "href": "chapters/overview/entities.html",
+    "title": "2  Entities, state variables and scales",
+    "section": "",
+    "text": "2.1 Idea\nHere we briefly describe the idea of this part….",
+    "crumbs": [
+      "Overview",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Entities, state variables and scales</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/overview/entities.html#guidance",
+    "href": "chapters/overview/entities.html#guidance",
+    "title": "2  Entities, state variables and scales",
+    "section": "2.2 Guidance",
+    "text": "2.2 Guidance",
+    "crumbs": [
+      "Overview",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Entities, state variables and scales</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/overview/entities.html#checklist",
+    "href": "chapters/overview/entities.html#checklist",
+    "title": "2  Entities, state variables and scales",
+    "section": "2.3 Checklist",
+    "text": "2.3 Checklist",
+    "crumbs": [
+      "Overview",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Entities, state variables and scales</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/overview/entities.html#examples",
+    "href": "chapters/overview/entities.html#examples",
+    "title": "2  Entities, state variables and scales",
+    "section": "2.4 Examples",
+    "text": "2.4 Examples\n\n2.4.1 ABM\n\n\n2.4.2 Prediction Models",
+    "crumbs": [
+      "Overview",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Entities, state variables and scales</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/overview/process.html",
+    "href": "chapters/overview/process.html",
+    "title": "3  Process overview and scheduling",
+    "section": "",
+    "text": "3.1 Idea\nHere we briefly describe the idea of this part….",
+    "crumbs": [
+      "Overview",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Process overview and scheduling</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/overview/process.html#guidance",
+    "href": "chapters/overview/process.html#guidance",
+    "title": "3  Process overview and scheduling",
+    "section": "3.2 Guidance",
+    "text": "3.2 Guidance",
+    "crumbs": [
+      "Overview",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Process overview and scheduling</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/overview/process.html#checklist",
+    "href": "chapters/overview/process.html#checklist",
+    "title": "3  Process overview and scheduling",
+    "section": "3.3 Checklist",
+    "text": "3.3 Checklist",
+    "crumbs": [
+      "Overview",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Process overview and scheduling</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/overview/process.html#examples",
+    "href": "chapters/overview/process.html#examples",
+    "title": "3  Process overview and scheduling",
+    "section": "3.4 Examples",
+    "text": "3.4 Examples\n\n3.4.1 ABM\n\n\n3.4.2 Prediction Models",
+    "crumbs": [
+      "Overview",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Process overview and scheduling</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/design/design.html",
+    "href": "chapters/design/design.html",
+    "title": "Design concepts",
+    "section": "",
+    "text": "Here we briefly describe the idea of this part….",
+    "crumbs": [
+      "Design concepts"
+    ]
+  },
+  {
+    "objectID": "chapters/design/basic.html",
+    "href": "chapters/design/basic.html",
+    "title": "4  Basic principles",
+    "section": "",
+    "text": "4.1 Idea\nHere we briefly describe the idea of this part….",
+    "crumbs": [
+      "Design concepts",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basic principles</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/design/basic.html#guidance",
+    "href": "chapters/design/basic.html#guidance",
+    "title": "4  Basic principles",
+    "section": "4.2 Guidance",
+    "text": "4.2 Guidance",
+    "crumbs": [
+      "Design concepts",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basic principles</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/design/basic.html#checklist",
+    "href": "chapters/design/basic.html#checklist",
+    "title": "4  Basic principles",
+    "section": "4.3 Checklist",
+    "text": "4.3 Checklist",
+    "crumbs": [
+      "Design concepts",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basic principles</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/design/basic.html#examples",
+    "href": "chapters/design/basic.html#examples",
+    "title": "4  Basic principles",
+    "section": "4.4 Examples",
+    "text": "4.4 Examples\n\n4.4.1 ABM\n\n\n4.4.2 Prediction Models",
+    "crumbs": [
+      "Design concepts",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Basic principles</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/design/emergence.html",
+    "href": "chapters/design/emergence.html",
+    "title": "5  Emergence",
+    "section": "",
+    "text": "5.1 Idea\nHere we briefly describe the idea of this part….",
+    "crumbs": [
+      "Design concepts",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Emergence</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/design/emergence.html#guidance",
+    "href": "chapters/design/emergence.html#guidance",
+    "title": "5  Emergence",
+    "section": "5.2 Guidance",
+    "text": "5.2 Guidance",
+    "crumbs": [
+      "Design concepts",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Emergence</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/design/emergence.html#checklist",
+    "href": "chapters/design/emergence.html#checklist",
+    "title": "5  Emergence",
+    "section": "5.3 Checklist",
+    "text": "5.3 Checklist",
+    "crumbs": [
+      "Design concepts",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Emergence</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/design/emergence.html#examples",
+    "href": "chapters/design/emergence.html#examples",
+    "title": "5  Emergence",
+    "section": "5.4 Examples",
+    "text": "5.4 Examples\n\n5.4.1 ABM\n\n\n5.4.2 Prediction Models",
+    "crumbs": [
+      "Design concepts",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Emergence</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/design/adaptation.html",
+    "href": "chapters/design/adaptation.html",
+    "title": "6  Adaptation",
+    "section": "",
+    "text": "6.1 Idea\nHere we briefly describe the idea of this part….",
+    "crumbs": [
+      "Design concepts",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Adaptation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/design/adaptation.html#guidance",
+    "href": "chapters/design/adaptation.html#guidance",
+    "title": "6  Adaptation",
+    "section": "6.2 Guidance",
+    "text": "6.2 Guidance",
+    "crumbs": [
+      "Design concepts",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Adaptation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/design/adaptation.html#checklist",
+    "href": "chapters/design/adaptation.html#checklist",
+    "title": "6  Adaptation",
+    "section": "6.3 Checklist",
+    "text": "6.3 Checklist",
+    "crumbs": [
+      "Design concepts",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Adaptation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/design/adaptation.html#examples",
+    "href": "chapters/design/adaptation.html#examples",
+    "title": "6  Adaptation",
+    "section": "6.4 Examples",
+    "text": "6.4 Examples\n\n6.4.1 ABM\n\n\n6.4.2 Prediction Models",
+    "crumbs": [
+      "Design concepts",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Adaptation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/details/details.html",
+    "href": "chapters/details/details.html",
+    "title": "Details",
+    "section": "",
+    "text": "Here we briefly describe this part….",
+    "crumbs": [
+      "Details"
+    ]
+  },
+  {
+    "objectID": "chapters/details/initialization.html",
+    "href": "chapters/details/initialization.html",
+    "title": "7  Initialization",
+    "section": "",
+    "text": "7.1 Idea\nHere we briefly describe the idea of this part….",
+    "crumbs": [
+      "Details",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Initialization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/details/initialization.html#guidance",
+    "href": "chapters/details/initialization.html#guidance",
+    "title": "7  Initialization",
+    "section": "7.2 Guidance",
+    "text": "7.2 Guidance",
+    "crumbs": [
+      "Details",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Initialization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/details/initialization.html#checklist",
+    "href": "chapters/details/initialization.html#checklist",
+    "title": "7  Initialization",
+    "section": "7.3 Checklist",
+    "text": "7.3 Checklist",
+    "crumbs": [
+      "Details",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Initialization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/details/initialization.html#examples",
+    "href": "chapters/details/initialization.html#examples",
+    "title": "7  Initialization",
+    "section": "7.4 Examples",
+    "text": "7.4 Examples\n\n7.4.1 ABM\n\n\n7.4.2 Prediction Models",
+    "crumbs": [
+      "Details",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Initialization</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/details/input.html",
+    "href": "chapters/details/input.html",
+    "title": "8  Input data",
+    "section": "",
+    "text": "8.1 Idea\nHere we briefly describe the idea of this part….",
+    "crumbs": [
+      "Details",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Input data</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/details/input.html#guidance",
+    "href": "chapters/details/input.html#guidance",
+    "title": "8  Input data",
+    "section": "8.2 Guidance",
+    "text": "8.2 Guidance",
+    "crumbs": [
+      "Details",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Input data</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/details/input.html#checklist",
+    "href": "chapters/details/input.html#checklist",
+    "title": "8  Input data",
+    "section": "8.3 Checklist",
+    "text": "8.3 Checklist",
+    "crumbs": [
+      "Details",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Input data</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/details/input.html#examples",
+    "href": "chapters/details/input.html#examples",
+    "title": "8  Input data",
+    "section": "8.4 Examples",
+    "text": "8.4 Examples\n\n8.4.1 ABM\n\n\n8.4.2 Prediction Models",
+    "crumbs": [
+      "Details",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Input data</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/details/submodels.html",
+    "href": "chapters/details/submodels.html",
+    "title": "9  Submodels",
+    "section": "",
+    "text": "9.1 Idea\nHere we briefly describe the idea of this part….",
+    "crumbs": [
+      "Details",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Submodels</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/details/submodels.html#guidance",
+    "href": "chapters/details/submodels.html#guidance",
+    "title": "9  Submodels",
+    "section": "9.2 Guidance",
+    "text": "9.2 Guidance",
+    "crumbs": [
+      "Details",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Submodels</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/details/submodels.html#checklist",
+    "href": "chapters/details/submodels.html#checklist",
+    "title": "9  Submodels",
+    "section": "9.3 Checklist",
+    "text": "9.3 Checklist",
+    "crumbs": [
+      "Details",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Submodels</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/details/submodels.html#examples",
+    "href": "chapters/details/submodels.html#examples",
+    "title": "9  Submodels",
+    "section": "9.4 Examples",
+    "text": "9.4 Examples\n\n9.4.1 ABM\n\n\n9.4.2 Prediction Models",
+    "crumbs": [
+      "Details",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Submodels</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/examples/examples.html",
+    "href": "chapters/examples/examples.html",
+    "title": "Examples",
+    "section": "",
+    "text": "Here we could provide a collection of full ODDs, i.e., links to where they are stored",
+    "crumbs": [
+      "Examples"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References",
+    "section": "",
+    "text": "Grimm, Railsback, V. 2020. “The ODD Protocol for Describing\nAgent-Based and Other Simulation Models: A Second Update to Improve\nClarity, Replication, and Structural Realism.” Journal of\nArtificial Societies and Social Simulation 23 (2). https://doi.org/10.18564/jasss.4259.",
+    "crumbs": [
+      "References"
+    ]
+  }
+]
