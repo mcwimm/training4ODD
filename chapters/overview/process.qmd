@@ -2,14 +2,53 @@
 
 ## Idea
 
-Here we briefly describe the idea of this part....
+::: {.callout-tip}
+### TL;DR – Processes:
+
+*   **What happens?** Provide a concise, step-by-step list of all "actions" that occur during each time step of the simulation.
+*   **Who does it?** For each action, specify which entity (or entities, e.g., all agents, the environment) executes it.
+*   **What changes?** State which state variables (from Element 2) are updated by each action.
+*   **In what order?** Clearly define the precise order in which actions are executed, and if multiple entities perform an action, specify their internal execution order (e.g., random, by highest value, arbitrary).
+*   **Why that order?** Provide the rationale for this scheduling, as it can significantly impact model results.
+
+:::
+
+This element is where you describe the *dynamics* of your model – **what happens and in what order**. It provides a high-level summary of the model's execution over a single time step, detailing the sequence of actions, which entities perform them, and what state variables are updated as a result. While the intricate details of *how* each process works are reserved for Element 7 (Submodels), this section gives the reader a crucial roadmap of the model's operational flow, including its internal clock and decision-making priorities. It's the "recipe" for your model's operations.
 
 ## Guidance
 
+Effectively describing your model's processes and scheduling is paramount for its reproducibility and comprehensibility. Keep the following in mind:
+
+*   **Be complete but concise:** Your schedule should include *everything* that is executed each time step. However, it should remain an *overview*. For complex processes, simply state which "submodel" (fully detailed in Element 7) is executed, without going into its internal logic here. Very simple processes can be fully described in this section.
+*   **Prioritize clarity of execution order:** For actions performed by multiple entities (e.g., all agents), clearly state the order of execution (e.g., arbitrary, random, sorted by a state variable). Scheduling decisions can have strong effects on model results and require careful justification.
+*   **Explicitly state state variable updates:** The core purpose of model processes is to change state variables. For each action, identify *which* state variables are updated.
+*   **Provide rationale for processes and scheduling:** Explain *why* you chose to include specific processes and exclude others. Crucially, justify *why* actions are scheduled in a particular order, especially when it's not self-evident. This transparency makes your model design less arbitrary.
+*   **Separate continuous time events (if applicable):** If your model includes actions scheduled as discrete events in continuous time (rather than discrete time steps), summarize how these events are scheduled (what triggers them, how their timing is determined). Full details are still reserved for Element 7.
+*   **Use pseudo-code or diagrams (judiciously):** While a simple numbered list of actions is often sufficient, more complex logic or scheduling might benefit from pseudo-code or flowcharts. However, these should *supplement*, not replace, the clear textual description, as diagrams alone are rarely sufficient for full reproducibility. Avoid actual programming code.
+*   **Do not include time step length or temporal extent:** These aspects belong in Element 2 (Entities, State Variables, and Scales), as they define the overall model world, not the internal operations per step.
+
 ## Checklist
+
+The ODD text for this element should describe:
+
+*   A complete but concise model schedule that defines exactly what happens each time step.
+    *   This schedule should be presented as a hierarchy of "actions" that each describe:
+        *   Which entity or entities execute which process or submodel.
+        *   Which state variables are updated.
+        *   (For actions executed by multiple entities) The order in which the entities execute it.
+*   A separate discussion, if needed, that summarizes how actions executed in continuous time (instead of discrete time steps) are scheduled.
+*   A discussion providing the rationale for why the model includes the processes it does.
+*   A discussion providing the rationale for how the actions are scheduled (e.g., why actions are in a given order, why a specific execution order was chosen for multiple entities).
 
 ## Examples
 
-### ABM
+Here are examples illustrating how model processes and their scheduling are described. These examples demonstrate how to provide a clear, step-by-step overview of the model's dynamics, linking processes to entities and state variables, and explaining the rationale behind the chosen order of operations.
 
-### Prediction Models
+### Examples Process Overview and Scheduling
+
+*   **[Ayllón D, Railsback SF, Vincenzi S, Groeneveld J, Almodóvar A, Grimm V. 2016. InSTREAM-Gen: Modelling eco-evolutionary dynamics of trout populations...]**
+    *   *This example provides a comprehensive list of processes covering the entire life-cycle of the simulated trout, detailing which entities (environment, trout, redds) perform which actions and the state variables affected. Crucially, it includes the rationale for the specific ordering of actions, explaining how it reflects biological priorities (e.g., environmental updates before fish actions, spawning before other fish behaviors).*
+    
+*   **[Evers E, de Vries H, Spruijt BM, Sterck EH. 2014. The EMO-model: an agent-based model of primate social behavior regulated by two emotional dimensions...]**
+    *   *This example highlights how to describe a model where processes are not strictly time-step based but are scheduled as discrete events in continuous time. It explains the event-driven nature, where the agent with the lowest scheduled time is activated next, and how activations lead to subsequent rescheduling based on behavioral outcomes.*
+    
