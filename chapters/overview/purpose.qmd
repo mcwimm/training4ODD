@@ -42,8 +42,7 @@ The ODD text for this element should describe:
 • The model’s specific purpose(s).
 • The patterns used as criteria for evaluating the model’s suitability for its purpose.
 
-## Examples
-### Example statements of model purpose
+## Examples of Model Purpose
 
 These examples are organized by the seven general model purposes identified by Edmonds et al. (2019. Different modelling purposes. Journal of Artificial Societies and Social Simulation 22:6; http://jasss.soc.surrey.ac.uk/22/3/6.html). The definitions of these purposes is quoted from Edmonds et al. (This does not list all possible purposes but includes the relevant kinds for the vast majority of academic model published.)
 
@@ -66,10 +65,9 @@ Example purpose of *description* (“to partially represent what is important of
 
 > The purpose of our model is to understand how different configurations in the policy design of REACH affect the dynamics of eco-innovation and shape market selection and innovation. In our model we take into account supplier–user interactions because they represent an essential element in the development of new technologies, particularly in the chemical industry. Additionally, some stylized facts that illustrate the competition between organic solvents and biosolvents in the surface treatment activity are considered. The objective is to examine to which extent different combinations of flexible and stringent instruments of REACH can lead to the development and diffusion of alternative solvents (biosolvents)
 
+## Examples of Model Patterns  
 
-### Example statements of patterns
-
-The “patterns” part of Element 1 is new in this version of ODD. Therefore, only a few ODD documents include it.
+Model patterns are essentially the benchmarks or phenomena from the real world (or from well-established theory) that your model should be able to reproduce if it is indeed capturing the essential mechanisms relevant to its purpose. If your model fails to reproduce an expected pattern, it signals that something crucial might be missing or misrepresented in its design. Conversely, successfully reproducing patterns increases confidence in the model's underlying logic and its ability to address its stated purpose. The “patterns” part of Element 1 is new in this version of ODD. Therefore, only a few ODD documents include it.
 
 [Model of vertical migration by Daphnia. Section 5.5 of: Railsback, S. F. and B. C. Harvey. 2020. Modeling populations of adaptive individuals. Princeton University Press, Princeton, New Jersey.]
 
