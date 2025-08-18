@@ -2,14 +2,76 @@
 
 ## Idea
 
+::: {.callout-tip}
+### TL;DR – Entities, state variables and scales:
+
+*   **Entities:** The distinct "things" or "actors" in your model (e.g., individual agents, spatial units, the environment, collectives). Describe *what* they represent and *why* they are included.
+*   **State Variables:** The dynamic (changing) characteristics or attributes of each entity (e.g., age, location, temperature, food availability). Define *what* each variable represents, its *type*, *units*, *range*, and if it's *dynamic or static*. Tables are often best for this.
+*   **Scales:** The spatial and temporal *extent* (total area/duration) and *resolution* (size of units, length of time steps) of your model. Also, describe any other dimensions used and provide the *rationale* for scale choices.
+
+:::
+
+Here, we lay out the fundamental "ingredients" of your model: the **entities** (the "things" being modeled), their **state variables** (the characteristics of those things), and the **scales** (the spatial and temporal dimensions) of the simulated world. Regardless of whether your model is designed for explanation, prediction, or another purpose, clearly defining these elements is essential for reproducibility and for a reader to understand *what* your model represents. This section serves as your model's "ontology" – explicitly stating what exists and how its basic properties are defined.
+
 Here we briefly describe the idea of this part....
 
 ## Guidance
 
+This element is crucial for defining the "what" of your model's world. Pay close attention to these points:
+
+*   **Provide the rationale for entity choices:** Clearly explain *why* you chose to include specific entities and, if relevant, *why* others were excluded. This decision fundamentally shapes your model and should be well-justified. (Reference to pattern-oriented modeling from Element 1 is a useful strategy here).
+*   **Include networks and collectives as entities if they have their own variables/behaviors:** If networks or groups of agents have their own distinct characteristics and actions, they should be described as entities here. If they are purely emergent properties of individual agents, they are not separate entities for this section.
+*   **Do not confuse parameters with state variables:** Parameters are static coefficients or constants, while state variables describe the dynamic (changing over time) characteristics of entities or vary among entities of the same type. Only include state variables here.
+*   **Focus on "low-level" state variables:** Do not include variables that can be easily calculated from other state variables already listed. State variables represent the minimum information needed to fully define an entity's state at any given moment. Avoid display-only variables.
+*   **Do not describe processes or behaviors yet:** This section is about *what is in* the model, not *what it does* or *how things change*. Details of actions, initialization, or how variables change are covered in subsequent elements (Elements 3, 5, 7).
+*   **Describe space and time explicitly:** State whether your model represents space (1D, 2D, 3D, continuous, discrete, toroidal) and how. Similarly, define how time is represented (discrete steps, continuous events) and the length/extent of time steps.
+*   **Address abstract/non-physical dimensions:** If your model uses other abstract dimensions (e.g., socio-economic status as a dimension), describe them in the same way you would physical space.
+*   **For abstract models, provide conceptual scales:** If your model doesn't represent a specific real system, approximate or conceptually define your spatial and temporal scales (e.g., "grid cells are urban lots," "time steps are the time for a family to sell a house").
+*   **For variable scales, describe typical values:** If your model can apply to systems with varying scales, state which scales are fixed versus variable, and provide typical ranges for the variable ones.
+*   **Provide the rationale for scale choices:** Justify *why* you chose particular spatial and temporal extents and resolutions, as these decisions can significantly impact model results.
+
 ## Checklist
+
+The ODD text for this element should describe:
+
+*   The kinds of entities in the model and what they represent.
+*   Why those entities were included and, if relevant, why other entities were not included.
+*   The state variables of each kind of entity, usually in a table. For each state variable, describe:
+    *   What it represents (including units).
+    *   Whether it is dynamic (changing over time) or static.
+    *   Its type (integer, float, text, boolean, etc.).
+    *   Its range (discrete values, limited numerical range, any value).
+*   Whether the model represents time and, if so:
+    *   Whether time is discrete, continuous, or both.
+    *   The length of time steps (temporal resolution).
+    *   How much total time is represented in a simulation (temporal extent).
+*   Whether the model represents space and, if so:
+    *   Whether space is discrete, continuous, or both.
+    *   If discrete, describe unit shape and size (spatial resolution).
+    *   How much total space is represented (spatial extent).
+*   Whether any other dimensions are represented, and how.
+*   The rationale for why the spatial and temporal scales were chosen.
 
 ## Examples
 
-### ABM
+Here are examples of how entities, their state variables, and the model's scales are described in different models. Note that the principles for describing these elements are largely consistent across various model types, whether agent-based, data-driven, or hybrid.
 
-### Prediction Models
+#### Example descriptions of Entities
+
+*   **[Knoeri C, Nikolic I, Althaus HJ, Binder CR. 2014. Enhancing recycling of construction materials...]**
+    *   *This example effectively shows how diverse entities (stakeholders, projects, grid cells, global environment) are defined and their roles explained within an ABM context.*
+
+#### Example descriptions of State Variables
+
+*   **[Railsback SF, Harvey BC, Ayllón D. InSTREAM 7 Model Description. Unpublished report.]**
+    *   *This example demonstrates the use of tables for clear, concise presentation of observer (global environment) and cell (spatial unit) state variables, including their types, units, and meanings. It highlights the crucial distinction between static and dynamic variables.*
+
+#### Example descriptions of Scales
+
+*   **[Railsback SF, Johnson MD. 2011. Pattern-oriented modeling of bird foraging and pest control in coffee farms...]**
+    *   *This example illustrates how to define spatial and temporal extent and resolution for an ecological ABM, including the important point about mixed time steps (e.g., 1-day step for general processes, but much shorter for specific agent behaviors like foraging).*
+*   **[Natalini D, Bravo G. 2014. Encouraging sustainable transport choices in American households...]**
+    *   *This example demonstrates the use of abstract or non-geographic dimensions (e.g., preference space with X, Y, Z coordinates for preferences) as "scales" within a social simulation model, showing how ODD can describe non-physical model spaces.*
+*   **[Polhill JG, Parker D, Brown D, Grimm V. 2008. Using the ODD protocol for describing three agent-based social simulation models of land-use change...]**
+    *   *This example shows how to describe scales for abstract models where absolute physical or temporal units are not fixed. It illustrates that even in abstract models, conceptual definitions of scales (e.g., grid cells as urban lots, time steps as "time for a family to sell a house") are necessary.*  
+    
