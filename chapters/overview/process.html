@@ -230,6 +230,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#examples-process-overview-and-scheduling" id="toc-examples-process-overview-and-scheduling" class="nav-link" data-scroll-target="#examples-process-overview-and-scheduling"><span class="header-section-number">3.4.1</span> Examples Process Overview and Scheduling</a></li>
   </ul></li>
+  <li><a href="#test-yourself" id="toc-test-yourself" class="nav-link" data-scroll-target="#test-yourself"><span class="header-section-number">3.5</span> Test Yourself</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://.../edit/main/chapters/overview/process.qmd" class="toc-action"><i class="bi bi-git"></i>Edit this page</a></li><li><a href="https://.../issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -324,9 +325,49 @@ TL;DR – Processes:
 <li><em>This example highlights how to describe a model where processes are not strictly time-step based but are scheduled as discrete events in continuous time. It explains the event-driven nature, where the agent with the lowest scheduled time is activated next, and how activations lead to subsequent rescheduling based on behavioral outcomes.</em></li>
 </ul></li>
 </ul>
-
-
 </section>
+</section>
+<section id="test-yourself" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="test-yourself"><span class="header-section-number">3.5</span> Test Yourself</h2>
+<p>Can you identify what is incorrect or could be significantly improved in the following description of a model’s process overview and scheduling?</p>
+<blockquote class="blockquote">
+<p>Each day, the agents decide where to go, then they move. Next, the environment updates based on their movement. We also collect data at the end of the simulation. This process is repeated until the simulation ends. We didn’t specify the order for agent movement because it doesn’t really matter for our results.</p>
+</blockquote>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Expand To See the Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Here’s a breakdown of what’s incorrect or could be significantly improved in the example description:</p>
+<ol type="1">
+<li><strong>Vague Process Names/Submodels:</strong> “Decide where to go,” “they move,” and “environment updates” are too generic. While full detail is in Element 7, the overview should use more descriptive “submodel” names (e.g., “Agent_Decision_Submodel,” “Agent_Movement_Submodel,” “Environment_Update_Submodel”).</li>
+<li><strong>Missing State Variable Updates:</strong> The description states <em>what</em> happens but fails to explicitly mention <em>which state variables</em> are updated by each action. For example:
+<ul>
+<li>“Agents decide where to go” should lead to an update of the agent’s <code>daily_destination</code> state variable.</li>
+<li>“They move” updates the agent’s <code>current_location</code> state variable.</li>
+<li>“Environment updates based on their movement” might update the <code>traffic_flow</code> state variable of <code>Roads</code> or <code>occupancy_status</code> of <code>Buildings</code>. This is a critical omission for reproducibility.</li>
+</ul></li>
+<li><strong>Incorrect Placement of Data Collection/Output:</strong> “We also collect data at the end of the simulation.” Data collection and output (what ODD calls “Observation” under Design Concepts) typically occur <em>within</em> each time step, after all relevant processes have run, to capture the system’s state. Describing it as only happening “at the end of the simulation” implies it’s not part of the <em>daily</em> schedule, which is often inaccurate for ABMs. Even if output is only saved at the very end, how the <em>data points themselves</em> are generated or “observed” from the model state usually happens within the simulation loop.</li>
+<li><strong>Insufficient Rationale for Execution Order:</strong> The statement “We didn’t specify the order for agent movement because it doesn’t really matter for our results” is a common trap. While it <em>might</em> be true that the order doesn’t matter, it needs to be explicitly stated and justified (e.g., “Agents update their location in arbitrary order, as their movement decisions are independent and do not affect the choices of other agents within the same time step”). This justification prevents assumptions and aids reproducibility. If the order <em>could</em> matter but the model implicitly assumes it doesn’t (e.g., synchronous updating where interactions are resolved after all agents have acted), that still needs to be clearly stated.</li>
+<li><strong>Missing Handling of Multi-Entity Action Order:</strong> “The agents decide where to go, then they move.” For actions performed by <em>all</em> agents, the internal order (e.g., random, sorted by age, arbitrary) <em>must</em> be specified, even if the modeler <em>believes</em> it doesn’t matter. This is a crucial detail for reproducibility.</li>
+<li><strong>Vague Loop Condition:</strong> “This process is repeated until the simulation ends” is implied by Element 2’s scales, but the schedule itself should be precise. For instance, “These actions are repeated for 100 time steps.”</li>
+</ol>
+<p>A significantly improved (but still hypothetical) version might be:</p>
+<blockquote class="blockquote">
+<p>Each time step (representing one hour, as defined in Element 2), the following actions are executed in this precise order: 1. <strong>Environment_Update_Submodel:</strong> The environment updates its <code>traffic_flow</code> state variables for all <code>Road</code> entities based on the previous hour’s agent movements. This update occurs first to provide current traffic conditions for agent decisions. 2. <strong>Agent_Decision_Submodel:</strong> All <strong>People</strong> agents simultaneously (arbitrary order) execute their decision submodel, updating their <code>daily_destination</code> state variable for the current time step. The order is arbitrary as agents make decisions based on perceived, not actual, real-time traffic updates. 3. <strong>Agent_Movement_Submodel:</strong> All <strong>People</strong> agents execute their movement submodel, updating their <code>current_location</code> state variable. The order in which agents attempt to move is randomized each time step to avoid artifacts from fixed processing order when multiple agents might compete for the same grid cell or road segment. 4. <strong>Observation_Submodel:</strong> The model’s observer collects aggregated data on <code>current_location</code> for all <code>People</code> and <code>traffic_flow</code> for all <code>Roads</code>, writing these to an output file. This ensures a consistent snapshot of the system state at the end of each time step. These actions are repeated for the total simulation duration of 100 days (2400 time steps), as defined in Element 2.</p>
+</blockquote>
+</div>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->

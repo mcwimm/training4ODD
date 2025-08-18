@@ -227,6 +227,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#guidance" id="toc-guidance" class="nav-link" data-scroll-target="#guidance"><span class="header-section-number">2.2</span> Guidance</a></li>
   <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist"><span class="header-section-number">2.3</span> Checklist</a></li>
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">2.4</span> Examples</a></li>
+  <li><a href="#test-yourself" id="toc-test-yourself" class="nav-link" data-scroll-target="#test-yourself"><span class="header-section-number">2.5</span> Test yourself</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://.../edit/main/chapters/overview/entities.qmd" class="toc-action"><i class="bi bi-git"></i>Edit this page</a></li><li><a href="https://.../issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -356,9 +357,50 @@ TL;DR – Entities, state variables and scales:
 <li><em>This example shows how to describe scales for abstract models where absolute physical or temporal units are not fixed. It illustrates that even in abstract models, conceptual definitions of scales (e.g., grid cells as urban lots, time steps as “time for a family to sell a house”) are necessary.</em></li>
 </ul></li>
 </ul>
-
-
 </section>
+</section>
+<section id="test-yourself" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="test-yourself"><span class="header-section-number">2.5</span> Test yourself</h2>
+<p>Can you identify what is incorrect or could be significantly improved in the following description of a model’s entities, state variables, and scales?</p>
+<blockquote class="blockquote">
+<p>Our model simulates a city. The entities are people, roads, and buildings. People have age, income, and a destination. Roads have length. Buildings have a type (residential, commercial). The model runs for 100 days, with each day being a time step. The city is a 100x100 grid where people move around. We also have a parameter for traffic congestion.</p>
+</blockquote>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Expand To See the Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Here’s a breakdown of what’s incorrect or could be significantly improved in the example description:</p>
+<ol type="1">
+<li><strong>Missing Rationale for Entities:</strong> While the entities are listed, there’s no explanation of <em>why</em> these specific entities (people, roads, buildings) were chosen, or why other potential entities (e.g., vehicles, city government, businesses) were <em>not</em> included. The “Rationale” guidance states this is a fundamental design decision that needs justification.</li>
+<li><strong>Incomplete State Variable Description:</strong>
+<ul>
+<li><strong>Units and Range:</strong> For “age,” “income,” and “length” (of roads), units and typical ranges are missing. What are the units for income (e.g., dollars, thousands of dollars)? What’s the age range (0-100 years)?</li>
+<li><strong>Type:</strong> The “type” of variable (integer, float, boolean, text string) is not specified for any state variable.</li>
+<li><strong>Dynamic vs.&nbsp;Static:</strong> While “age” is implicitly dynamic, it’s not explicitly stated. Are road “length” and building “type” static or dynamic?</li>
+<li><strong>“Destination” as a State Variable:</strong> While “destination” can be a state variable for a person, its representation isn’t clear (e.g., a coordinate, a building ID, a text string). It also hints at a <em>behavior</em> (moving to a destination) which starts to stray into Element 3.</li>
+</ul></li>
+<li><strong>Confusion of Parameters with State Variables:</strong> “We also have a parameter for traffic congestion.” A parameter belongs in Element 7 (Submodels) where it’s used in an equation or algorithm, not here as a description of a part of the modeled world’s state. If “traffic congestion” is a <em>dynamic characteristic of roads</em> that changes during the simulation, it should be a state variable of the <code>Road</code> entity. If it’s a <em>fixed value</em> throughout the simulation, it’s a parameter. The current phrasing is ambiguous.</li>
+<li><strong>Missing Rationale for Scales:</strong> The spatial and temporal scales are stated (“100 days,” “100x100 grid”), but there’s no justification for <em>why</em> these specific scales were chosen. Why 100 days? Why a 100x100 grid? What real-world area does 100x100 grid represent? (e.g., “each grid cell represents 100m x 100m, representing a total area of 100 km²”). This justification is crucial for scientific rigor.</li>
+<li><strong>Lack of Detail on Spatial Representation:</strong> “The city is a 100x100 grid where people move around” is too brief. Is it discrete (cells) or continuous? Is it toroidal (wraps around) or bounded? These details are important for reproducibility.</li>
+<li><strong>“People move around” - Describing Behavior:</strong> Similar to “destination,” this phrase hints at model processes, which should be avoided in Element 2. The purpose of Element 2 is to describe <em>what exists</em>, not <em>what happens</em>.</li>
+</ol>
+<p>A significantly improved (but still hypothetical) version might be:</p>
+<blockquote class="blockquote">
+<p>The entities in this model are <strong>People</strong>, <strong>Roads</strong>, and <strong>Buildings</strong>. <strong>People</strong> are included to represent the individual decision-makers whose movements influence traffic patterns. <strong>Roads</strong> and <strong>Buildings</strong> are included as essential environmental structures that constrain and facilitate movement within the city. Other potential entities, such as vehicles or specific businesses, were omitted to maintain model simplicity and focus on emergent traffic patterns from individual routing choices. * <strong>People</strong> (agents): * <code>age</code>: Integer, years [0-100]. Dynamic. * <code>income</code>: Float, thousands of USD/year [0-500]. Dynamic. * <code>current_location</code>: Coordinate pair (x, y) on grid. Dynamic. * <code>daily_destination</code>: Coordinate pair (x, y) on grid. Dynamic. * <strong>Roads</strong> (static environmental entities): * <code>segment_length</code>: Float, meters [10-500]. Static. * <code>traffic_flow</code>: Integer, vehicles/hour [0-2000]. Dynamic. * <code>road_type</code>: Text string {“arterial”, “local”}. Static. * <strong>Buildings</strong> (static environmental entities): * <code>building_id</code>: Integer. Static. * <code>building_type</code>: Text string {“residential”, “commercial”, “public”}. Static. * <code>occupancy_status</code>: Boolean {TRUE, FALSE}. Dynamic. The model represents a 2D spatial extent of 10x10 km, modeled as a <strong>100x100 discrete grid</strong> of square cells, where each cell represents 100x100 meters. The spatial boundaries are <strong>bounded</strong> (no toroidal wrapping) to simulate a finite urban area. The temporal scale is represented by <strong>discrete time steps</strong>, with each time step representing <strong>1 hour</strong>. Simulations run for a total temporal extent of <strong>2400 hours (100 days)</strong>. These scales were chosen to capture diurnal commuting patterns within a medium-sized urban area and to allow for sufficient simulation time for traffic congestion patterns to emerge and stabilize.</p>
+</blockquote>
+</div>
+</div>
+</div>
+
+
 </section>
 
 </main> <!-- /main -->
