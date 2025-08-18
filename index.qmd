@@ -6,4 +6,6 @@ THIS PAGE IS UNDER CONSTRUCTION....
 
 > This collection of training materials is based on @grimm2020 and partly comprises the detailed descriptions provided in Appendix S1.
 
+We expand on this material by providing tests and examples of the usage of ODD for different model types (i.e., not only individual-based models, but also data-driven and hybrid models). Please feel free to contact us if you have any questions about this material, or would like to contribute further.  
+
 
