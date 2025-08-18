@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5fd9db47a040b21ac2cac9a0b3b722ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-e8de9bd59ba156b9e4cb33cd6f01d621.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -228,8 +228,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist"><span class="header-section-number">3.3</span> Checklist</a></li>
   <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">3.4</span> Examples</a>
   <ul class="collapse">
-  <li><a href="#abm" id="toc-abm" class="nav-link" data-scroll-target="#abm"><span class="header-section-number">3.4.1</span> ABM</a></li>
-  <li><a href="#prediction-models" id="toc-prediction-models" class="nav-link" data-scroll-target="#prediction-models"><span class="header-section-number">3.4.2</span> Prediction Models</a></li>
+  <li><a href="#examples-process-overview-and-scheduling" id="toc-examples-process-overview-and-scheduling" class="nav-link" data-scroll-target="#examples-process-overview-and-scheduling"><span class="header-section-number">3.4.1</span> Examples Process Overview and Scheduling</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://.../edit/main/chapters/overview/process.qmd" class="toc-action"><i class="bi bi-git"></i>Edit this page</a></li><li><a href="https://.../issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
@@ -258,21 +257,73 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="idea" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="idea"><span class="header-section-number">3.1</span> Idea</h2>
-<p>Here we briefly describe the idea of this part….</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+TL;DR – Processes:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>What happens?</strong> Provide a concise, step-by-step list of all “actions” that occur during each time step of the simulation.</li>
+<li><strong>Who does it?</strong> For each action, specify which entity (or entities, e.g., all agents, the environment) executes it.</li>
+<li><strong>What changes?</strong> State which state variables (from Element 2) are updated by each action.</li>
+<li><strong>In what order?</strong> Clearly define the precise order in which actions are executed, and if multiple entities perform an action, specify their internal execution order (e.g., random, by highest value, arbitrary).</li>
+<li><strong>Why that order?</strong> Provide the rationale for this scheduling, as it can significantly impact model results.</li>
+</ul>
+</div>
+</div>
+<p>This element is where you describe the <em>dynamics</em> of your model – <strong>what happens and in what order</strong>. It provides a high-level summary of the model’s execution over a single time step, detailing the sequence of actions, which entities perform them, and what state variables are updated as a result. While the intricate details of <em>how</em> each process works are reserved for Element 7 (Submodels), this section gives the reader a crucial roadmap of the model’s operational flow, including its internal clock and decision-making priorities. It’s the “recipe” for your model’s operations.</p>
 </section>
 <section id="guidance" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="guidance"><span class="header-section-number">3.2</span> Guidance</h2>
+<p>Effectively describing your model’s processes and scheduling is paramount for its reproducibility and comprehensibility. Keep the following in mind:</p>
+<ul>
+<li><strong>Be complete but concise:</strong> Your schedule should include <em>everything</em> that is executed each time step. However, it should remain an <em>overview</em>. For complex processes, simply state which “submodel” (fully detailed in Element 7) is executed, without going into its internal logic here. Very simple processes can be fully described in this section.</li>
+<li><strong>Prioritize clarity of execution order:</strong> For actions performed by multiple entities (e.g., all agents), clearly state the order of execution (e.g., arbitrary, random, sorted by a state variable). Scheduling decisions can have strong effects on model results and require careful justification.</li>
+<li><strong>Explicitly state state variable updates:</strong> The core purpose of model processes is to change state variables. For each action, identify <em>which</em> state variables are updated.</li>
+<li><strong>Provide rationale for processes and scheduling:</strong> Explain <em>why</em> you chose to include specific processes and exclude others. Crucially, justify <em>why</em> actions are scheduled in a particular order, especially when it’s not self-evident. This transparency makes your model design less arbitrary.</li>
+<li><strong>Separate continuous time events (if applicable):</strong> If your model includes actions scheduled as discrete events in continuous time (rather than discrete time steps), summarize how these events are scheduled (what triggers them, how their timing is determined). Full details are still reserved for Element 7.</li>
+<li><strong>Use pseudo-code or diagrams (judiciously):</strong> While a simple numbered list of actions is often sufficient, more complex logic or scheduling might benefit from pseudo-code or flowcharts. However, these should <em>supplement</em>, not replace, the clear textual description, as diagrams alone are rarely sufficient for full reproducibility. Avoid actual programming code.</li>
+<li><strong>Do not include time step length or temporal extent:</strong> These aspects belong in Element 2 (Entities, State Variables, and Scales), as they define the overall model world, not the internal operations per step.</li>
+</ul>
 </section>
 <section id="checklist" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="checklist"><span class="header-section-number">3.3</span> Checklist</h2>
+<p>The ODD text for this element should describe:</p>
+<ul>
+<li>A complete but concise model schedule that defines exactly what happens each time step.
+<ul>
+<li>This schedule should be presented as a hierarchy of “actions” that each describe:
+<ul>
+<li>Which entity or entities execute which process or submodel.</li>
+<li>Which state variables are updated.</li>
+<li>(For actions executed by multiple entities) The order in which the entities execute it.</li>
+</ul></li>
+</ul></li>
+<li>A separate discussion, if needed, that summarizes how actions executed in continuous time (instead of discrete time steps) are scheduled.</li>
+<li>A discussion providing the rationale for why the model includes the processes it does.</li>
+<li>A discussion providing the rationale for how the actions are scheduled (e.g., why actions are in a given order, why a specific execution order was chosen for multiple entities).</li>
+</ul>
 </section>
 <section id="examples" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="examples"><span class="header-section-number">3.4</span> Examples</h2>
-<section id="abm" class="level3" data-number="3.4.1">
-<h3 data-number="3.4.1" class="anchored" data-anchor-id="abm"><span class="header-section-number">3.4.1</span> ABM</h3>
-</section>
-<section id="prediction-models" class="level3" data-number="3.4.2">
-<h3 data-number="3.4.2" class="anchored" data-anchor-id="prediction-models"><span class="header-section-number">3.4.2</span> Prediction Models</h3>
+<p>Here are examples illustrating how model processes and their scheduling are described. These examples demonstrate how to provide a clear, step-by-step overview of the model’s dynamics, linking processes to entities and state variables, and explaining the rationale behind the chosen order of operations.</p>
+<section id="examples-process-overview-and-scheduling" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="examples-process-overview-and-scheduling"><span class="header-section-number">3.4.1</span> Examples Process Overview and Scheduling</h3>
+<ul>
+<li><strong>[Ayllón D, Railsback SF, Vincenzi S, Groeneveld J, Almodóvar A, Grimm V. 2016. InSTREAM-Gen: Modelling eco-evolutionary dynamics of trout populations…]</strong>
+<ul>
+<li><em>This example provides a comprehensive list of processes covering the entire life-cycle of the simulated trout, detailing which entities (environment, trout, redds) perform which actions and the state variables affected. Crucially, it includes the rationale for the specific ordering of actions, explaining how it reflects biological priorities (e.g., environmental updates before fish actions, spawning before other fish behaviors).</em></li>
+</ul></li>
+<li><strong>[Evers E, de Vries H, Spruijt BM, Sterck EH. 2014. The EMO-model: an agent-based model of primate social behavior regulated by two emotional dimensions…]</strong>
+<ul>
+<li><em>This example highlights how to describe a model where processes are not strictly time-step based but are scheduled as discrete events in continuous time. It explains the event-driven nature, where the agent with the lowest scheduled time is activated next, and how activations lead to subsequent rescheduling based on behavioral outcomes.</em></li>
+</ul></li>
+</ul>
 
 
 </section>

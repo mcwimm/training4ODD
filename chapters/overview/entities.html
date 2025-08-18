@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5fd9db47a040b21ac2cac9a0b3b722ba.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-e8de9bd59ba156b9e4cb33cd6f01d621.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -226,11 +226,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#idea" id="toc-idea" class="nav-link active" data-scroll-target="#idea"><span class="header-section-number">2.1</span> Idea</a></li>
   <li><a href="#guidance" id="toc-guidance" class="nav-link" data-scroll-target="#guidance"><span class="header-section-number">2.2</span> Guidance</a></li>
   <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist"><span class="header-section-number">2.3</span> Checklist</a></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">2.4</span> Examples</a>
-  <ul class="collapse">
-  <li><a href="#abm" id="toc-abm" class="nav-link" data-scroll-target="#abm"><span class="header-section-number">2.4.1</span> ABM</a></li>
-  <li><a href="#prediction-models" id="toc-prediction-models" class="nav-link" data-scroll-target="#prediction-models"><span class="header-section-number">2.4.2</span> Prediction Models</a></li>
-  </ul></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">2.4</span> Examples</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://.../edit/main/chapters/overview/entities.qmd" class="toc-action"><i class="bi bi-git"></i>Edit this page</a></li><li><a href="https://.../issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -258,21 +254,108 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="idea" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="idea"><span class="header-section-number">2.1</span> Idea</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+TL;DR – Entities, state variables and scales:
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Entities:</strong> The distinct “things” or “actors” in your model (e.g., individual agents, spatial units, the environment, collectives). Describe <em>what</em> they represent and <em>why</em> they are included.</li>
+<li><strong>State Variables:</strong> The dynamic (changing) characteristics or attributes of each entity (e.g., age, location, temperature, food availability). Define <em>what</em> each variable represents, its <em>type</em>, <em>units</em>, <em>range</em>, and if it’s <em>dynamic or static</em>. Tables are often best for this.</li>
+<li><strong>Scales:</strong> The spatial and temporal <em>extent</em> (total area/duration) and <em>resolution</em> (size of units, length of time steps) of your model. Also, describe any other dimensions used and provide the <em>rationale</em> for scale choices.</li>
+</ul>
+</div>
+</div>
+<p>Here, we lay out the fundamental “ingredients” of your model: the <strong>entities</strong> (the “things” being modeled), their <strong>state variables</strong> (the characteristics of those things), and the <strong>scales</strong> (the spatial and temporal dimensions) of the simulated world. Regardless of whether your model is designed for explanation, prediction, or another purpose, clearly defining these elements is essential for reproducibility and for a reader to understand <em>what</em> your model represents. This section serves as your model’s “ontology” – explicitly stating what exists and how its basic properties are defined.</p>
 <p>Here we briefly describe the idea of this part….</p>
 </section>
 <section id="guidance" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="guidance"><span class="header-section-number">2.2</span> Guidance</h2>
+<p>This element is crucial for defining the “what” of your model’s world. Pay close attention to these points:</p>
+<ul>
+<li><strong>Provide the rationale for entity choices:</strong> Clearly explain <em>why</em> you chose to include specific entities and, if relevant, <em>why</em> others were excluded. This decision fundamentally shapes your model and should be well-justified. (Reference to pattern-oriented modeling from Element 1 is a useful strategy here).</li>
+<li><strong>Include networks and collectives as entities if they have their own variables/behaviors:</strong> If networks or groups of agents have their own distinct characteristics and actions, they should be described as entities here. If they are purely emergent properties of individual agents, they are not separate entities for this section.</li>
+<li><strong>Do not confuse parameters with state variables:</strong> Parameters are static coefficients or constants, while state variables describe the dynamic (changing over time) characteristics of entities or vary among entities of the same type. Only include state variables here.</li>
+<li><strong>Focus on “low-level” state variables:</strong> Do not include variables that can be easily calculated from other state variables already listed. State variables represent the minimum information needed to fully define an entity’s state at any given moment. Avoid display-only variables.</li>
+<li><strong>Do not describe processes or behaviors yet:</strong> This section is about <em>what is in</em> the model, not <em>what it does</em> or <em>how things change</em>. Details of actions, initialization, or how variables change are covered in subsequent elements (Elements 3, 5, 7).</li>
+<li><strong>Describe space and time explicitly:</strong> State whether your model represents space (1D, 2D, 3D, continuous, discrete, toroidal) and how. Similarly, define how time is represented (discrete steps, continuous events) and the length/extent of time steps.</li>
+<li><strong>Address abstract/non-physical dimensions:</strong> If your model uses other abstract dimensions (e.g., socio-economic status as a dimension), describe them in the same way you would physical space.</li>
+<li><strong>For abstract models, provide conceptual scales:</strong> If your model doesn’t represent a specific real system, approximate or conceptually define your spatial and temporal scales (e.g., “grid cells are urban lots,” “time steps are the time for a family to sell a house”).</li>
+<li><strong>For variable scales, describe typical values:</strong> If your model can apply to systems with varying scales, state which scales are fixed versus variable, and provide typical ranges for the variable ones.</li>
+<li><strong>Provide the rationale for scale choices:</strong> Justify <em>why</em> you chose particular spatial and temporal extents and resolutions, as these decisions can significantly impact model results.</li>
+</ul>
 </section>
 <section id="checklist" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="checklist"><span class="header-section-number">2.3</span> Checklist</h2>
+<p>The ODD text for this element should describe:</p>
+<ul>
+<li>The kinds of entities in the model and what they represent.</li>
+<li>Why those entities were included and, if relevant, why other entities were not included.</li>
+<li>The state variables of each kind of entity, usually in a table. For each state variable, describe:
+<ul>
+<li>What it represents (including units).</li>
+<li>Whether it is dynamic (changing over time) or static.</li>
+<li>Its type (integer, float, text, boolean, etc.).</li>
+<li>Its range (discrete values, limited numerical range, any value).</li>
+</ul></li>
+<li>Whether the model represents time and, if so:
+<ul>
+<li>Whether time is discrete, continuous, or both.</li>
+<li>The length of time steps (temporal resolution).</li>
+<li>How much total time is represented in a simulation (temporal extent).</li>
+</ul></li>
+<li>Whether the model represents space and, if so:
+<ul>
+<li>Whether space is discrete, continuous, or both.</li>
+<li>If discrete, describe unit shape and size (spatial resolution).</li>
+<li>How much total space is represented (spatial extent).</li>
+</ul></li>
+<li>Whether any other dimensions are represented, and how.</li>
+<li>The rationale for why the spatial and temporal scales were chosen.</li>
+</ul>
 </section>
 <section id="examples" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="examples"><span class="header-section-number">2.4</span> Examples</h2>
-<section id="abm" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="abm"><span class="header-section-number">2.4.1</span> ABM</h3>
+<p>Here are examples of how entities, their state variables, and the model’s scales are described in different models. Note that the principles for describing these elements are largely consistent across various model types, whether agent-based, data-driven, or hybrid.</p>
+<section id="example-descriptions-of-entities" class="level4" data-number="2.4.0.1">
+<h4 data-number="2.4.0.1" class="anchored" data-anchor-id="example-descriptions-of-entities"><span class="header-section-number">2.4.0.1</span> Example descriptions of Entities</h4>
+<ul>
+<li><strong>[Knoeri C, Nikolic I, Althaus HJ, Binder CR. 2014. Enhancing recycling of construction materials…]</strong>
+<ul>
+<li><em>This example effectively shows how diverse entities (stakeholders, projects, grid cells, global environment) are defined and their roles explained within an ABM context.</em></li>
+</ul></li>
+</ul>
 </section>
-<section id="prediction-models" class="level3" data-number="2.4.2">
-<h3 data-number="2.4.2" class="anchored" data-anchor-id="prediction-models"><span class="header-section-number">2.4.2</span> Prediction Models</h3>
+<section id="example-descriptions-of-state-variables" class="level4" data-number="2.4.0.2">
+<h4 data-number="2.4.0.2" class="anchored" data-anchor-id="example-descriptions-of-state-variables"><span class="header-section-number">2.4.0.2</span> Example descriptions of State Variables</h4>
+<ul>
+<li><strong>[Railsback SF, Harvey BC, Ayllón D. InSTREAM 7 Model Description. Unpublished report.]</strong>
+<ul>
+<li><em>This example demonstrates the use of tables for clear, concise presentation of observer (global environment) and cell (spatial unit) state variables, including their types, units, and meanings. It highlights the crucial distinction between static and dynamic variables.</em></li>
+</ul></li>
+</ul>
+</section>
+<section id="example-descriptions-of-scales" class="level4" data-number="2.4.0.3">
+<h4 data-number="2.4.0.3" class="anchored" data-anchor-id="example-descriptions-of-scales"><span class="header-section-number">2.4.0.3</span> Example descriptions of Scales</h4>
+<ul>
+<li><strong>[Railsback SF, Johnson MD. 2011. Pattern-oriented modeling of bird foraging and pest control in coffee farms…]</strong>
+<ul>
+<li><em>This example illustrates how to define spatial and temporal extent and resolution for an ecological ABM, including the important point about mixed time steps (e.g., 1-day step for general processes, but much shorter for specific agent behaviors like foraging).</em></li>
+</ul></li>
+<li><strong>[Natalini D, Bravo G. 2014. Encouraging sustainable transport choices in American households…]</strong>
+<ul>
+<li><em>This example demonstrates the use of abstract or non-geographic dimensions (e.g., preference space with X, Y, Z coordinates for preferences) as “scales” within a social simulation model, showing how ODD can describe non-physical model spaces.</em></li>
+</ul></li>
+<li><strong>[Polhill JG, Parker D, Brown D, Grimm V. 2008. Using the ODD protocol for describing three agent-based social simulation models of land-use change…]</strong>
+<ul>
+<li><em>This example shows how to describe scales for abstract models where absolute physical or temporal units are not fixed. It illustrates that even in abstract models, conceptual definitions of scales (e.g., grid cells as urban lots, time steps as “time for a family to sell a house”) are necessary.</em></li>
+</ul></li>
+</ul>
 
 
 </section>
