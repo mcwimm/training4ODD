@@ -52,3 +52,34 @@ Here are examples illustrating how model processes and their scheduling are desc
 *   **[Evers E, de Vries H, Spruijt BM, Sterck EH. 2014. The EMO-model: an agent-based model of primate social behavior regulated by two emotional dimensions...]**
     *   *This example highlights how to describe a model where processes are not strictly time-step based but are scheduled as discrete events in continuous time. It explains the event-driven nature, where the agent with the lowest scheduled time is activated next, and how activations lead to subsequent rescheduling based on behavioral outcomes.*
     
+## Test Yourself
+
+Can you identify what is incorrect or could be significantly improved in the following description of a model's process overview and scheduling?
+
+> Each day, the agents decide where to go, then they move. Next, the environment updates based on their movement. We also collect data at the end of the simulation. This process is repeated until the simulation ends. We didn't specify the order for agent movement because it doesn't really matter for our results.
+
+::: {.callout-caution collapse="true"}
+### Expand To See the Solution
+
+Here’s a breakdown of what’s incorrect or could be significantly improved in the example description:  
+
+1.  **Vague Process Names/Submodels:** "Decide where to go," "they move," and "environment updates" are too generic. While full detail is in Element 7, the overview should use more descriptive "submodel" names (e.g., "Agent_Decision_Submodel," "Agent_Movement_Submodel," "Environment_Update_Submodel").
+2.  **Missing State Variable Updates:** The description states *what* happens but fails to explicitly mention *which state variables* are updated by each action. For example:
+    *   "Agents decide where to go" should lead to an update of the agent's `daily_destination` state variable.
+    *   "They move" updates the agent's `current_location` state variable.
+    *   "Environment updates based on their movement" might update the `traffic_flow` state variable of `Roads` or `occupancy_status` of `Buildings`. This is a critical omission for reproducibility.
+3.  **Incorrect Placement of Data Collection/Output:** "We also collect data at the end of the simulation." Data collection and output (what ODD calls "Observation" under Design Concepts) typically occur *within* each time step, after all relevant processes have run, to capture the system's state. Describing it as only happening "at the end of the simulation" implies it's not part of the *daily* schedule, which is often inaccurate for ABMs. Even if output is only saved at the very end, how the *data points themselves* are generated or "observed" from the model state usually happens within the simulation loop.
+4.  **Insufficient Rationale for Execution Order:** The statement "We didn't specify the order for agent movement because it doesn't really matter for our results" is a common trap. While it *might* be true that the order doesn't matter, it needs to be explicitly stated and justified (e.g., "Agents update their location in arbitrary order, as their movement decisions are independent and do not affect the choices of other agents within the same time step"). This justification prevents assumptions and aids reproducibility. If the order *could* matter but the model implicitly assumes it doesn't (e.g., synchronous updating where interactions are resolved after all agents have acted), that still needs to be clearly stated.
+5.  **Missing Handling of Multi-Entity Action Order:** "The agents decide where to go, then they move." For actions performed by *all* agents, the internal order (e.g., random, sorted by age, arbitrary) *must* be specified, even if the modeler *believes* it doesn't matter. This is a crucial detail for reproducibility.
+6.  **Vague Loop Condition:** "This process is repeated until the simulation ends" is implied by Element 2's scales, but the schedule itself should be precise. For instance, "These actions are repeated for 100 time steps."
+
+A significantly improved (but still hypothetical) version might be:  
+
+> Each time step (representing one hour, as defined in Element 2), the following actions are executed in this precise order:
+1.  **Environment_Update_Submodel:** The environment updates its `traffic_flow` state variables for all `Road` entities based on the previous hour's agent movements. This update occurs first to provide current traffic conditions for agent decisions.
+2.  **Agent_Decision_Submodel:** All **People** agents simultaneously (arbitrary order) execute their decision submodel, updating their `daily_destination` state variable for the current time step. The order is arbitrary as agents make decisions based on perceived, not actual, real-time traffic updates.
+3.  **Agent_Movement_Submodel:** All **People** agents execute their movement submodel, updating their `current_location` state variable. The order in which agents attempt to move is randomized each time step to avoid artifacts from fixed processing order when multiple agents might compete for the same grid cell or road segment.
+4.  **Observation_Submodel:** The model's observer collects aggregated data on `current_location` for all `People` and `traffic_flow` for all `Roads`, writing these to an output file. This ensures a consistent snapshot of the system state at the end of each time step.
+These actions are repeated for the total simulation duration of 100 days (2400 time steps), as defined in Element 2.
+
+:::

@@ -75,3 +75,44 @@ Here are examples of how entities, their state variables, and the model's scales
 *   **[Polhill JG, Parker D, Brown D, Grimm V. 2008. Using the ODD protocol for describing three agent-based social simulation models of land-use change...]**
     *   *This example shows how to describe scales for abstract models where absolute physical or temporal units are not fixed. It illustrates that even in abstract models, conceptual definitions of scales (e.g., grid cells as urban lots, time steps as "time for a family to sell a house") are necessary.*  
     
+## Test yourself
+
+Can you identify what is incorrect or could be significantly improved in the following description of a model's entities, state variables, and scales?
+
+> Our model simulates a city. The entities are people, roads, and buildings. People have age, income, and a destination. Roads have length. Buildings have a type (residential, commercial). The model runs for 100 days, with each day being a time step. The city is a 100x100 grid where people move around. We also have a parameter for traffic congestion.
+
+::: {.callout-caution collapse="true"}
+### Expand To See the Solution
+
+Here’s a breakdown of what’s incorrect or could be significantly improved in the example description:  
+
+1.  **Missing Rationale for Entities:** While the entities are listed, there's no explanation of *why* these specific entities (people, roads, buildings) were chosen, or why other potential entities (e.g., vehicles, city government, businesses) were *not* included. The "Rationale" guidance states this is a fundamental design decision that needs justification.
+2.  **Incomplete State Variable Description:**
+    *   **Units and Range:** For "age," "income," and "length" (of roads), units and typical ranges are missing. What are the units for income (e.g., dollars, thousands of dollars)? What's the age range (0-100 years)?
+    *   **Type:** The "type" of variable (integer, float, boolean, text string) is not specified for any state variable.
+    *   **Dynamic vs. Static:** While "age" is implicitly dynamic, it's not explicitly stated. Are road "length" and building "type" static or dynamic?
+    *   **"Destination" as a State Variable:** While "destination" can be a state variable for a person, its representation isn't clear (e.g., a coordinate, a building ID, a text string). It also hints at a *behavior* (moving to a destination) which starts to stray into Element 3.
+3.  **Confusion of Parameters with State Variables:** "We also have a parameter for traffic congestion." A parameter belongs in Element 7 (Submodels) where it's used in an equation or algorithm, not here as a description of a part of the modeled world's state. If "traffic congestion" is a *dynamic characteristic of roads* that changes during the simulation, it should be a state variable of the `Road` entity. If it's a *fixed value* throughout the simulation, it's a parameter. The current phrasing is ambiguous.
+4.  **Missing Rationale for Scales:** The spatial and temporal scales are stated ("100 days," "100x100 grid"), but there's no justification for *why* these specific scales were chosen. Why 100 days? Why a 100x100 grid? What real-world area does 100x100 grid represent? (e.g., "each grid cell represents 100m x 100m, representing a total area of 100 km²"). This justification is crucial for scientific rigor.
+5.  **Lack of Detail on Spatial Representation:** "The city is a 100x100 grid where people move around" is too brief. Is it discrete (cells) or continuous? Is it toroidal (wraps around) or bounded? These details are important for reproducibility.
+6.  **"People move around" - Describing Behavior:** Similar to "destination," this phrase hints at model processes, which should be avoided in Element 2. The purpose of Element 2 is to describe *what exists*, not *what happens*.
+
+A significantly improved (but still hypothetical) version might be:  
+
+> The entities in this model are **People**, **Roads**, and **Buildings**. **People** are included to represent the individual decision-makers whose movements influence traffic patterns. **Roads** and **Buildings** are included as essential environmental structures that constrain and facilitate movement within the city. Other potential entities, such as vehicles or specific businesses, were omitted to maintain model simplicity and focus on emergent traffic patterns from individual routing choices.
+*   **People** (agents):
+    *   `age`: Integer, years [0-100]. Dynamic.
+    *   `income`: Float, thousands of USD/year [0-500]. Dynamic.
+    *   `current_location`: Coordinate pair (x, y) on grid. Dynamic.
+    *   `daily_destination`: Coordinate pair (x, y) on grid. Dynamic.
+*   **Roads** (static environmental entities):
+    *   `segment_length`: Float, meters [10-500]. Static.
+    *   `traffic_flow`: Integer, vehicles/hour [0-2000]. Dynamic.
+    *   `road_type`: Text string {"arterial", "local"}. Static.
+*   **Buildings** (static environmental entities):
+    *   `building_id`: Integer. Static.
+    *   `building_type`: Text string {"residential", "commercial", "public"}. Static.
+    *   `occupancy_status`: Boolean {TRUE, FALSE}. Dynamic.
+The model represents a 2D spatial extent of 10x10 km, modeled as a **100x100 discrete grid** of square cells, where each cell represents 100x100 meters. The spatial boundaries are **bounded** (no toroidal wrapping) to simulate a finite urban area. The temporal scale is represented by **discrete time steps**, with each time step representing **1 hour**. Simulations run for a total temporal extent of **2400 hours (100 days)**. These scales were chosen to capture diurnal commuting patterns within a medium-sized urban area and to allow for sufficient simulation time for traffic congestion patterns to emerge and stabilize.
+
+:::
