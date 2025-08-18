@@ -75,18 +75,34 @@ The “patterns” part of Element 1 is new in this version of ODD. Therefore, o
 
 > The purpose of this model is to explain and understand diurnal vertical migration (VM) in zooplankton and how it interacts with a life history tradeoff, the allocation of mass to reproduction or growth. The model is based explicitly on the cladoceran Daphnia magna (which we refer to simply as Daphnia). We evaluate our model by its ability to reproduce three patterns. The first two are of primary importance because they were observed in extensive laboratory experiments by Loose and Dawidowicz (1994) and appear driven directly by the risk-growth tradeoff (Figure 5.1)… Pattern 1: Response of VM to predation risk. This pattern reflects how daphnia VM in the laboratory changed as the perceived risk of predation by fish increased. In the laboratory experiments, perceived risk was increased by adding fish kairomones—chemicals produced by fish that daphnia can use to sense fish density—and perceived risk was quantified as fish concentration (fish/L). With no perceived risk, daphnia stayed near the surface throughout the diurnal cycle. At low fish concentrations, daphnia remained near the surface or migrated only to shallow depths. With high risk, daphnia stayed near the bottom. But at intermediate risk, daphnia exhibited VM, with their mean elevation in the water column low during the day and rising toward the surface at night. And at the lowest fish concentration producing VM, daphnia did not begin migration until growing to a threshold body size. Pattern 2. Selection of slightly shallower depths with low food. Under high perceived risk of fish predation, a decrease in food availability resulted in daphnia selecting shallower depths. However, this change in elevation was small and occurred only in daytime. Pattern 3. Response of reproductive allocation to predation risk. Under low or absent perceived fish predation risk, the daphnia in Fiksen’s model initially allocated almost all their assimilated mass to growth instead of reproduction. This allocation let them reach maximum size quickly and switch to high reproductive output. At higher risk, the daphnia allocated some mass to reproduction from the start, producing some offspring before reaching maximum size. However, at very high risk the daphnia fed very little, grew slowly, and allocated only a moderate fraction of mass to reproduction…
 
-### ABM
-
-### Prediction Models
-
 ## Test yourself
 
 **Can you identify what is incorrect in the following description of a model's purpose?**
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+> The model's purpose is to explore the dynamics of forest ecosystems under climate change. We want to see how different species might respond and if there are any interesting feedback loops. The model considers various tree types, their growth, and competition for resources. We expect to see some changes in forest composition over time. This work is important for understanding ecological resilience.
 
 ::: {.callout-caution collapse="true"}
 ### Expand To See the Solution
 
-This is an example of a 'folded' caution callout that can be expanded by the user. You can use \`collapse="true"\` to collapse it by default or \`collapse="false"\` to make a collapsible callout that is expanded by default.
+Here’s a breakdown of what’s incorrect or could be improved in the example purpose statement, aligned with the guidance provided in Section 1.2:  
+
+**1. Lack of Specificity / "Explore" is too vague:** The statement "to explore the dynamics of forest ecosystems" and "see how different species might respond" is a classic example of an imprecise purpose. It doesn't state a clear question, hypothesis, or problem the model addresses. It's an indication that the model might have been built without a sharp focus.  
+**2. Missing a Clear Question/Hypothesis:** While it mentions "feedback loops," it doesn't pose a testable question like "To what extent do species-specific physiological adaptations to drought, combined with competitive interactions, influence the long-term carbon sequestration capacity of temperate forests under projected IPCC climate scenarios?"  
+
+**3. No Defined "Higher-Level Purpose":** Is it for prediction, explanation, description, or theoretical exposition? "Understanding ecological resilience" is a noble goal, but how does this specific model contribute to it? What kind of understanding will it generate?  
+
+**4. No Tie to Primary Results/Success Criteria:** "We expect to see some changes in forest composition over time" is a vague outcome, not a specific criterion for success. How will the authors or readers judge if the model successfully explored or understood anything? What specific graphs or relationships would demonstrate this?  
+
+**5. No Testable Patterns:** This is the most significant omission given the updated ODD. There are no specified patterns (observations, trends, general beliefs) that the model should reproduce to demonstrate its realism or utility. What specific changes in forest composition are expected based on empirical data or theory? How will "interesting feedback loops" be identified and verified?  
+
+**6. Describes the Model Prematurely:** "The model considers various tree types, their growth, and competition for resources" starts to describe how the model works, which should be reserved for later sections (Entities, State Variables, Processes, etc.). The Purpose section should focus solely on the "why."  
+
+**7. Not Specific to This Version:** It doesn't clearly delineate what this particular model aims to achieve versus potential future expansions.  
+
+**8. Ambiguous Terms:** "Forest ecosystems," "different species," "various tree types," and "ecological resilience" are all very broad. What specific types of forests, species, or aspects of resilience are being modeled?  
+
+A significantly improved (but still hypothetical) version might be:  
+
+> The purpose of this model is to test the hypothesis that increased frequency and intensity of drought events, driven by climate change, will lead to a shift in temperate forest composition from drought-sensitive coniferous species to more drought-tolerant deciduous species. Specifically, we aim to explain the observed pattern of increasing deciduous tree dominance in the Pacific Northwest region over the last two decades, and to predict the magnitude of this compositional shift by 2050 under IPCC RCP 8.5 climate projections. The model's suitability will be evaluated by its ability to reproduce two key patterns: (1) the observed decline in average growth rates of Douglas Fir following historical drought years, and (2) the pattern of increased seedling establishment of Oak species in areas previously dominated by coniferous trees after severe droughts.
+
 :::
