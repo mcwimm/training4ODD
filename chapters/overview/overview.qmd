@@ -1,3 +1,7 @@
+# Background
+
+This is only a test to see whether or not my RStudio connects with GitHub correctly.
+
 # Overview
 
 Readers usually want to decide quickly whether your model is relevant to their research question(s) and whether they can learn from it and reuse parts of it, or indeed the entire model. This decision is made based on a small amount of relevant information before anyone takes the time to look at the details in more depth. The 'Overview' section of the ODD protocol caters for this need. It contains only three paragraphs:
@@ -7,5 +11,3 @@ Readers usually want to decide quickly whether your model is relevant to their r
 -   **Entities, state variables and scales**: describe the objects or actors that behave as a unit in the model, the attributes of each kind of entity and the spatial and temporal scales represented.
 
 -   **Process overview and scheduling**: A brief summary of the processes executed by the model and the order in which they are executed.
-
-
