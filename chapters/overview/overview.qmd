@@ -1,6 +1,19 @@
-# Background
+# Towards the Implementation of Open Science for Environmental Modelling
 
-This is only a test to see whether or not my RStudio connects with GitHub correctly.
+**Open Science** is a collaborative culture that empowers the open sharing of data, information and knowledge within the scientific community and with the public, with the aim of accelerating scientific research and understanding. Its main goal is to make publicly funded scientific research transparent, accessible and reproducible. It consists of four key elements (adopted from [NASA](https://science.nasa.gov/open-science/)).
+
+|  |  |
+|-----------------------|------------------------------------------------|
+| **Open collaborative Science** | Participants welcome the cooperation with other researchers and organizations. |
+| **Open Available Science** | Data, tools, software, documentation and publications are provided in accordance with the FAIR guiding principles. |
+| **Open Reproducible Science** | Scientific processes and results are reproducible by all members of the research community. |
+| **Open Transparent Science** | Scientific processes and results should be as open as possible to encourage further studies and to increase public trust. |
+
+FAIR stands for [**F**]{.underline}indable, [**A**]{.underline}ccessible, [**I**]{.underline}nteroperable, and [**R**]{.underline}eusable. Following the commitment of the Research Data Alliance, various funding agencies and organizations, the FAIR guiding principles have become the standard for scientific data management, but not to environmental modelling yet. The reason for this is not a lack of necessity, but the complexity and computational nature of models describing human and natural systems (**HNS**). Missing a universal language as it exists for mathematical models, documentations of HNS models are difficult to write and to read, and sometimes even incomplete. As a result, a complete understanding and reimplementation by other researchers is often impossible.
+
+The **Open Modelling Foundation** ([OMF](https://www.openmodelingfoundation.org)), an international open science community that works to enable the next generation modeling of **HNS**, targets on exactly this issue. At the members council meeting in May 2025 in Boulder, the idea of proposing the so called ODD protocol as a general standard was generally approved. The Overview, Design concepts and Details (ODD) protocol introduced for describing Individual- and Agent-Based Models (ABMs) in 2006 and updated in 2010 and 2020, is widely accepted and used to document ABMs in journal articles. It is a standardized document it provides a consistent, logical and readable account of the structure and dynamics of ABMs. Its suitability to describe other HNS models than ABMs has still to be tested. We are convinced that parts of it will work well while others have to be adjusted to the particular model type and domain.
+
+With this online tutorial, we want contribute to this process. **.[. to be continued]{.underline}**
 
 # Overview
 
