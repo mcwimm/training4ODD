@@ -138,7 +138,7 @@ div.csl-indent {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./chapters/overview/overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Towards the Implementation of Open Science for Environmental Modelling</span></a>
+ <span class="menu-text">Overview</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -242,7 +242,10 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a></li>
+  <li><a href="#welcome" id="toc-welcome" class="nav-link active" data-scroll-target="#welcome">Welcome</a>
+  <ul class="collapse">
+  <li><a href="#how-is-this-tutorial-organised" id="toc-how-is-this-tutorial-organised" class="nav-link" data-scroll-target="#how-is-this-tutorial-organised">How is this tutorial organised?</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://.../edit/main/index.qmd" class="toc-action"><i class="bi bi-git"></i>Edit this page</a></li><li><a href="https://.../issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -270,30 +273,134 @@ div.csl-indent {
 
 <section id="welcome" class="level1 unnumbered">
 <h1 class="unnumbered">Welcome</h1>
-<div class="callout callout-style-default callout-warning callout-titled">
+<p><strong>Open Science</strong> is a collaborative culture that empowers the open sharing of data, information and knowledge within the scientific community and with the public, with the aim of accelerating scientific research and understanding. Its main goal is to make publicly funded scientific research transparent, accessible and reproducible. Do you already know <strong>the</strong> <strong>elements of Open Science</strong> (adopted from <a href="https://science.nasa.gov/open-science/">NASA</a>)?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Four Key Elements Of Open Science
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td><strong>Open collaborative Science</strong></td>
+<td>Participants welcome the cooperation with other researchers and organizations.</td>
+</tr>
+<tr class="even">
+<td><strong>Open Available Science</strong></td>
+<td>Data, tools, software, documentation and publications are provided in accordance with the FAIR guiding principles.</td>
+</tr>
+<tr class="odd">
+<td><strong>Open Reproducible Science</strong></td>
+<td>Scientific processes and results are reproducible by all members of the research community.</td>
+</tr>
+<tr class="even">
+<td><strong>Open Transparent Science</strong></td>
+<td>Scientific processes and results should be as open as possible to encourage further studies and to increase public trust.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>The <strong>FAIR guiding principles</strong> are part of them. FAIR stands for <u><strong>F</strong></u>indable, <u><strong>A</strong></u>ccessible, <u><strong>I</strong></u>nteroperable, and <u><strong>R</strong></u>eusable. Their implementation requires concepts (e.g., meta-data, open-access licences), technologies (e.g., specialized software), and repositories. Is our research already <strong>FAIR</strong>?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The status-quo of FAIR principles in environmental sciences
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Following the commitment of the Research Data Alliance, various funding agencies and organizations, the FAIR guiding principles have become the standard for scientific data management, but not to modelling yet. The reason for this is not a lack of necessity, but the complexity and computational nature of models describing human and natural systems (<strong>HNS</strong>). Missing a universal language as it exists for mathematical models, documentations of HNS models are difficult to write and to read, and sometimes incomplete. As a result, a complete understanding and re-implementation by researchers is often impossible. This statements accounts for researchers others than the developers of a model. However, if a model is maintained and further developed over years, it might also apply in parts to the developers themselves.</p>
+</div>
+</div>
+</div>
+<p>The <strong>Open Modelling Foundation</strong> (<a href="https://www.openmodelingfoundation.org">OMF</a>), an international open science community that works to enable the next generation modeling of human and natural systems (<strong>HNS</strong>), targets on this issue. At the members council meeting in May 2025 in Boulder, the idea of proposing the so called <strong>ODD protocol</strong> as a general standard was generally approved.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What is the ODD protocol?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The <u><strong>O</strong></u>verview, <u><strong>D</strong></u>esign concepts and <u><strong>D</strong></u>etails (ODD) protocol introduced for describing Individual- and Agent-Based Models (ABMs) in <span class="citation" data-cites="Grimm2006">(<a href="references.html#ref-Grimm2006" role="doc-biblioref">V. Grimm et al. 2006</a>)</span> and updated in <span class="citation" data-cites="Grimm2010">(<a href="references.html#ref-Grimm2010" role="doc-biblioref">Volker Grimm et al. 2010</a>)</span> and <span class="citation" data-cites="grimm2020">(<a href="references.html#ref-grimm2020" role="doc-biblioref">R. Grimm V. 2020</a>)</span>, is widely accepted and used to document ABMs in journal articles. It is a standardized document providing a consistent, logical and readable account of the structure and dynamics of ABMs.</p>
+</div>
+</div>
+</div>
+<p>Its suitability to describe HNS models (any type of complex computational models developed for environmental systems) has still to be tested. Many parts of it will probably work well while others have to be adjusted. With this online tutorial, we want contribute to this process.</p>
+<section id="how-is-this-tutorial-organised" class="level2">
+<h2 class="anchored" data-anchor-id="how-is-this-tutorial-organised">How is this tutorial organised?</h2>
+<p>This training material is based on <span class="citation" data-cites="grimm2020">R. Grimm V. (<a href="references.html#ref-grimm2020" role="doc-biblioref">2020</a>)</span> and partly comprises the detailed descriptions provided in Appendix S1. We expand on this material by providing tests and examples of the usage of ODD for different model types (i.e., not only individual-based models, but also data-driven and hybrid models).</p>
+<p>The tutorial goes sequentially through the three sections of the protocol: <u><strong>O</strong></u>verview, <u><strong>D</strong></u>esign concepts and <u><strong>D</strong></u>etails:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Figure 1.png" class="img-fluid figure-img"></p>
+<figcaption><strong>Structure of the ODD <span class="citation" data-cites="grimm2020">(<a href="references.html#ref-grimm2020" role="doc-biblioref">R. Grimm V. 2020</a>)</span></strong></figcaption>
+</figure>
+</div>
+<p><strong>Each element</strong> of the main sections is addressed by a <strong>separate chapter</strong>. They all follow the same <strong>structure</strong>:</p>
+<ul>
+<li><em>What is this chapter about?</em></li>
+<li><em>Idea</em></li>
+<li><em>Guidance</em></li>
+<li><em>Checklist</em></li>
+<li><em>Examples</em></li>
+<li><em>Key takeaways</em></li>
+<li><em>Test yourself</em></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Warning
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>THIS PAGE IS UNDER CONSTRUCTION….</p>
+<p>Since ODD was developed for ABM, many examples are taken from this model type. To promote the application to HNS models in general, we tried to give also examples for other models types. Since our background is nevertheless domain specific, this did not work for all parts and we count on your feedback<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> and contribution. Open Science is a community effort. So let’s develop this tutorial in that spirit.</p>
 </div>
 </div>
-<blockquote class="blockquote">
-<p>This collection of training materials is based on <span class="citation" data-cites="grimm2020">Grimm (<a href="references.html#ref-grimm2020" role="doc-biblioref">2020</a>)</span> and partly comprises the detailed descriptions provided in Appendix S1.</p>
-</blockquote>
-<p>We expand on this material by providing tests and examples of the usage of ODD for different model types (i.e., not only individual-based models, but also data-driven and hybrid models). Please feel free to contact us if you have any questions about this material, or would like to contribute further.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-grimm2020" class="csl-entry" role="listitem">
 Grimm, Railsback, V. 2020. <span>“The ODD Protocol for Describing Agent-Based and Other Simulation Models: A Second Update to Improve Clarity, Replication, and Structural Realism.”</span> <em>Journal of Artificial Societies and Social Simulation</em> 23 (2). <a href="https://doi.org/10.18564/jasss.4259">https://doi.org/10.18564/jasss.4259</a>.
 </div>
+<div id="ref-Grimm2006" class="csl-entry" role="listitem">
+Grimm, V., U. Berger, F. Bastiansen, S. Eliassen, V. Ginot, J. Giske, J. Goss-Custard, et al. 2006. <span>“A Standard Protocol for Describing Individual-Based and Agent-Based Models.”</span> <em>Ecological Modelling</em> 198 (1-2). <a href="https://doi.org/10.1016/j.ecolmodel.2006.04.023">https://doi.org/10.1016/j.ecolmodel.2006.04.023</a>.
 </div>
+<div id="ref-Grimm2010" class="csl-entry" role="listitem">
+Grimm, Volker, Uta Berger, Donald L. DeAngelis, J. Gary Polhill, Jarl Giske, and Steven F. Railsback. 2010. <span>“The ODD Protocol: A Review and First Update.”</span> <em>Ecological Modelling</em> 221 (23): 2760–68.
+</div>
+</div>
+</section>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Do we want provide a link to a forum or an E-Mail address for feedback? I think this is reasonable and good for the ODD development, but this is also much work. What do you think?<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
@@ -700,8 +807,8 @@ Grimm, Railsback, V. 2020. <span>“The ODD Protocol for Describing Agent-Based 
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./chapters/overview/overview.html" class="pagination-link" aria-label="Towards the Implementation of Open Science for Environmental Modelling">
-        <span class="nav-page-text">Towards the Implementation of Open Science for Environmental Modelling</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./chapters/overview/overview.html" class="pagination-link" aria-label="Overview">
+        <span class="nav-page-text">Overview</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
