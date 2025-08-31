@@ -1,11 +1,56 @@
 # Welcome {.unnumbered}
 
-::: callout-warning
-THIS PAGE IS UNDER CONSTRUCTION....
+**Open Science** is a collaborative culture that empowers the open sharing of data, information and knowledge within the scientific community and with the public, with the aim of accelerating scientific research and understanding. Its main goal is to make publicly funded scientific research transparent, accessible and reproducible. Do you already know **the** **elements of Open Science** (adopted from [NASA](https://science.nasa.gov/open-science/))?
+
+::: {.callout-note collapse="true"}
+## The Four Key Elements Of Open Science
+
+|  |  |
+|------------------------------------|------------------------------------|
+| **Open collaborative Science** | Participants welcome the cooperation with other researchers and organizations. |
+| **Open Available Science** | Data, tools, software, documentation and publications are provided in accordance with the FAIR guiding principles. |
+| **Open Reproducible Science** | Scientific processes and results are reproducible by all members of the research community. |
+| **Open Transparent Science** | Scientific processes and results should be as open as possible to encourage further studies and to increase public trust. |
 :::
 
-> This collection of training materials is based on @grimm2020 and partly comprises the detailed descriptions provided in Appendix S1.
+The **FAIR guiding principles** are part of them. FAIR stands for [**F**]{.underline}indable, [**A**]{.underline}ccessible, [**I**]{.underline}nteroperable, and [**R**]{.underline}eusable. Their implementation requires concepts (e.g., meta-data, open-access licences), technologies (e.g., specialized software), and repositories. Is our research already **FAIR**?
 
-We expand on this material by providing tests and examples of the usage of ODD for different model types (i.e., not only individual-based models, but also data-driven and hybrid models). Please feel free to contact us if you have any questions about this material, or would like to contribute further.  
+::: {.callout-note collapse="true"}
+## The status-quo of FAIR principles in environmental sciences
 
+Following the commitment of the Research Data Alliance, various funding agencies and organizations, the FAIR guiding principles have become the standard for scientific data management, but not to modelling yet. The reason for this is not a lack of necessity, but the complexity and computational nature of models describing human and natural systems (**HNS**). Missing a universal language as it exists for mathematical models, documentations of HNS models are difficult to write and to read, and sometimes incomplete. As a result, a complete understanding and re-implementation by researchers is often impossible. This statements accounts for researchers others than the developers of a model. However, if a model is maintained and further developed over years, it might also apply in parts to the developers themselves.
+:::
 
+The **Open Modelling Foundation** ([OMF](https://www.openmodelingfoundation.org)), an international open science community that works to enable the next generation modeling of human and natural systems (**HNS**), targets on this issue. At the members council meeting in May 2025 in Boulder, the idea of proposing the so called **ODD protocol** as a general standard was generally approved.
+
+::: {.callout-note collapse="true"}
+## What is the ODD protocol?
+
+The [**O**]{.underline}verview, [**D**]{.underline}esign concepts and [**D**]{.underline}etails (ODD) protocol introduced for describing Individual- and Agent-Based Models (ABMs) in [@Grimm2006] and updated in [@Grimm2010] and [@grimm2020], is widely accepted and used to document ABMs in journal articles. It is a standardized document providing a consistent, logical and readable account of the structure and dynamics of ABMs.
+:::
+
+Its suitability to describe HNS models (any type of complex computational models developed for environmental systems) has still to be tested. Many parts of it will probably work well while others have to be adjusted. With this online tutorial, we want contribute to this process.
+
+## How is this tutorial organised?
+
+This training material is based on @grimm2020 and partly comprises the detailed descriptions provided in Appendix S1. We expand on this material by providing tests and examples of the usage of ODD for different model types (i.e., not only individual-based models, but also data-driven and hybrid models).
+
+The tutorial goes sequentially through the three sections of the protocol: [**O**]{.underline}verview, [**D**]{.underline}esign concepts and [**D**]{.underline}etails:
+
+![**Structure of the ODD [@grimm2020]**](images/Figure%201.png)
+
+**Each element** of the main sections is addressed by a **separate chapter**. They all follow the same **structure**:
+
+-   *What is this chapter about?*
+-   *Idea*
+-   *Guidance*
+-   *Checklist*
+-   *Examples*
+-   *Key takeaways*
+-   *Test yourself*
+
+::: callout-important
+Since ODD was developed for ABM, many examples are taken from this model type. To promote the application to HNS models in general, we tried to give also examples for other models types. Since our background is nevertheless domain specific, this did not work for all parts and we count on your feedback[^index-1] and contribution. Open Science is a community effort. So let's develop this tutorial in that spirit.
+:::
+
+[^index-1]: Do we want provide a link to a forum or an E-Mail address for feedback? I think this is reasonable and good for the ODD development, but this is also much work. What do you think?
