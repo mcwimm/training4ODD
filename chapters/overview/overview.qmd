@@ -16,11 +16,13 @@ The section ***Overview*** of the ODD protocol provides the **meta-data of the m
 
 The *Overview* provides all relevant information for this decision, but in a small amount. It contains three paragraphs:
 
--   **Purpose and patterns**: state the specific purpose(s) for which the model was developed, and the empirical observations (i.e. patterns) believed to be driven by the processes, variables, etc. described by the model.
+-   **Purpose, patterns and model type**[^overview-1]: state the specific purpose(s) for which the model was developed, and the empirical observations (i.e. patterns) believed to be driven by the processes, variables, etc. described by the model.
 
 -   **Entities, state variables and scales**: describe the objects or actors that behave as a unit in the model, the attributes of each kind of entity and the spatial and temporal scales represented.
 
 -   **Process overview and scheduling**: A brief summary of the processes executed by the model and the order in which they are executed.
+
+[^overview-1]: We added *model type* here. We consider it important since it determines the subsections of the ODD protocol.
 
 ## Pitfalls
 
@@ -32,7 +34,7 @@ The *Overview* contains often
 All this is irrelevant for the decision whether the model is suitable or not for the own purpose. This becomes only interesting once the reader is willing to move on to the subsequent chapters of the ODD.
 
 ::: callout-tip
-## Key takeway
+## Key takeaway
 
 The *Overview* contains the meta-data of your model only. The information provided should be technical rather than narrative. A reader wants to decide quickly whether your model is useful for his/her own needs and further read is worth.
 :::

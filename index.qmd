@@ -6,7 +6,7 @@
 ## The Four Key Elements Of Open Science
 
 |  |  |
-|------------------------------------|------------------------------------|
+|----|----|
 | **Open collaborative Science** | Participants welcome the cooperation with other researchers and organizations. |
 | **Open Available Science** | Data, tools, software, documentation and publications are provided in accordance with the FAIR guiding principles. |
 | **Open Reproducible Science** | Scientific processes and results are reproducible by all members of the research community. |
@@ -33,11 +33,11 @@ Its suitability to describe HNS models (any type of complex computational models
 
 ## How is this tutorial organised?
 
-This training material is based on @grimm2020 and partly comprises the detailed descriptions provided in Appendix S1. We expand on this material by providing tests and examples of the usage of ODD for different model types (i.e., not only individual-based models, but also data-driven and hybrid models).
+This training material is based on @grimm2020 and partly comprises the detailed descriptions provided in Appendix S1. We expand on this material by providing tests and examples of the usage of ODD for different model types (i.e., not only agent-based models, but also data-driven and hybrid models).
 
 The tutorial goes sequentially through the three sections of the protocol: [**O**]{.underline}verview, [**D**]{.underline}esign concepts and [**D**]{.underline}etails:
 
-![**Structure of the ODD [@grimm2020]**](images/Figure%201.png)
+![Structure of the ODD protocol adapted after[@grimm2020]. The term model type was added in the overview since this meta-data is important for subsequent information.](images/ODD.png)
 
 **Each element** of the main sections is addressed by a **separate chapter**. They all follow the same **structure**:
 
