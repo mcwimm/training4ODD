@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -265,27 +285,93 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-TL;DR – Purpose:
+TL;DR – Purpose
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Describes why the model was developed: What question, hypothesis, or problem does it address? Is it exploratory, explanatory, or predictive? What are the main processes it tries to capture?</p>
-<p>The purpose defines the model’s role in the research — its “why”.</p>
+<p>Describes why the model was developed:</p>
+<ul>
+<li>What question, hypothesis, or <strong>problem</strong> does it address? .. but also for what was it not developed!</li>
+<li>Is it exploratory, explanatory, or predictive?</li>
+<li>Which <strong>patterns</strong> should be reproduced by the model to evaluate its suitability for the purpose?</li>
+<li>To which general <strong>type</strong> belongs this model?</li>
+</ul>
+<p>The purpose defines the model’s role in the research — its “why”, “focus” and “approach”.</p>
 </div>
 </div>
-<p>Every model has to start from a clear question, problem, or hypothesis; readers cannot understand your model unless they understand its purpose. Therefore, ODD starts with a concise and specific statement of the purpose(s) for which the model was developed. The examples of Element 1 we provide below categorize model purposes into types of general purpose (e.g., prediction, explanation, description, theoretical exposition, illustration, analogy, and social learning). It is useful to first identify one or more of these general types of model purpose before stating the specific purpose. The “patterns” part of this element is new in this version of ODD. It helps clarify the model purpose by specifying the criteria you will use to decide when your model is realistic enough to be useful for its purpose. The patterns are observations, at the individual or system level, that are believed to be driven by the same processes, variables, etc. that are important for the model’s purpose. For some of the possible purposes, the model will be assumed useful only if it can reproduce the patterns. For other purposes, not reproducing the patterns can be an important result because it indicates that some mechanism is missing or inadequately represented, ultimately indicating how important these are. These patterns can be observations from the real system being modeled, obtained from data or literature. For models not based on a specific real system, the patterns are often general beliefs about how the system and its agents should behave. Including patterns in ODD is also a way to link it explicitly to “pattern-oriented modeling”, a set of strategies for designing and evaluating ABMs; this link is explained in the main text and by Railsback and Grimm (2019).</p>
+<p>ODD starts with a concise and specific statement of the purpose(s) for which the model was developed. This should be a clear question, problem, or hypothesis. The purpose assigns your model to a <strong>general category</strong>, e.g.</p>
+<ul>
+<li>prediction</li>
+<li>explanation</li>
+<li>description</li>
+<li>theoretical exposition</li>
+<li>illustration</li>
+<li>analogy</li>
+<li>social learning</li>
+<li>..</li>
+</ul>
+<p><strong>Identify first one or more of these categories before you state the specific purpose of your model.</strong></p>
+<p>For most <strong>specific purposes</strong>, the model will be assumed useful only if it can <strong>reproduce observational patterns</strong>. They occur at the individual or system level; and are believed to be driven by the same processes, variables, etc. that the model considers. Not reproducing patterns can also be an important result because it indicates that some processes are missing or inadequately represented. <strong>Specify the patterns you will use as criteria to decide whether your model is useful for its purpose.</strong></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Where do you find these patterns?
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Patterns can be observations from the real system being modeled, obtained from data or literature. For models not based on a specific real system, the patterns are often general beliefs about how the system and its agents should behave. You find a very good overview about empirical patterns useful for predictive models here: <span class="citation" data-cites="gallagher2021">(<a href="../../references.html#ref-gallagher2021" role="doc-biblioref">Gallagher et al. 2021</a>)</span></p>
+</div>
+</div>
+</div>
 </section>
 <section id="guidance" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="guidance"><span class="header-section-number">1.2</span> Guidance</h2>
-<p><strong>Make the purpose specific, addressing a clear question.</strong> The purpose statement should be specific enough to enable a reader to independently judge a model’s success at achieving this purpose as well as to serve as the primary “filter” for what is and is not in the model: ideally the model should only include entities and mechanisms that are necessary to meet its purpose. If the purpose statement is only general and unspecific, and especially if it lacks patterns for evaluating the model’s usefulness, then it will be difficult to justify (and make) model design decisions. Some ODDs state only that the model’s purpose is to “explore,” “investigate,” or “study” some system or phenomenon, which is not specific enough to assess the model or to determine what the model needs to contain. An imprecise purpose such as this is often an indication that the modeler simply assembled some mechanisms in an ABM and explored its results. Studies like this can be made more scientific by stating the purpose as a clear question such as “To test whether the mechanisms A, B, and C can explain the observed phenomena X, Y, and Z.”</p>
-<p><strong>Include the higher-level purpose</strong>. The purpose statement should also clarify the model’s higher-level purpose: whether it is to develop understanding of the system, or to make specific predictions, etc. Different high-level purposes lead to different model designs. Use the general purposes from the examples of Element 1 we provide below as a guide.</p>
-<p><strong>Tie the purpose to the study’s primary results.</strong> One way to make this statement of model purpose specific enough is to explicitly consider what point you are trying to demonstrate with the model. The statement should allow the readers to clearly judge the extent to which the model is successful. This is closely related to the primary analysis you will conduct with the model. Think about the key graph(s) you will produce in your “Results” section, where you apply the model to your main research question. The model’s purpose should include producing the relationship shown in this graph.</p>
-<p><strong>Define your terms.</strong> If you state that your model’s purpose is (for example) to “predict how the vulnerability of a community to flooding depends on public policy”, you still have not stated a clear model purpose. The term “vulnerability to flooding” could mean many things: drowning, travel delays, property damage, etc.; and “public policy” could refer to zoning, insurance, or emergency response. Be clear about exactly what inputs and results your model addresses.</p>
-<p><strong>Be specific to this version of the model.</strong> To keep the description clear and focused, do not discuss potential future modifications of the model to new purposes or patterns. (Future plans might be described instead in the Discussion section of a publication.) However, if the same model is designed for multiple purposes, those purposes should be described even if they are not addressed in the current publication.</p>
-<p><strong>Do not describe the model yet.</strong> Authors are often tempted to start describing how the model works here in the purpose statement, which is a mistake. Instead, address only the purpose here and then, in subsequent sections, you can tie the model’s design to the purpose by explaining why specific design decisions were necessary for the model’s purpose.</p>
-<p><strong>Make this purpose statement independent.</strong> Model descriptions are typically published in research articles or reports that also include, in their introduction, a statement of the study’s purpose. This ODD element should be independent of any presentation of study purpose elsewhere in the same document, for several reasons: (a) an ODD description should always be complete and understandable by itself, and (b) re-stating the model purpose as specifically as possible always helps modelers (and readers) clarify what should be in the model.</p>
-<p><strong>Use qualitative but testable patterns.</strong> Patterns useful for designing and evaluating ABMs are often general (observed at multiple locations or times) and qualitative. However, using patterns to evaluate a model requires that they be testable: you need a reproducible way to determine whether the model matches the pattern. Making patterns testable can be as simple as stating them as qualitative trends, e.g., that output X increases as variable A decreases. We generally discourage statistical definitions of patterns where the pattern is, in fact, qualitative. There are more appropriate ways of formalizing qualitative patterns, e.g.&nbsp;Thorngate and Edmonds (2013).</p>
-<p><strong>Document the patterns.</strong> A complete description of the patterns used in modeling needs to document why the patterns were selected: what evidence supports them, and what is their role in justifying the purpose? Documenting patterns can range from simply stating them as widespread (or your own) beliefs, to citing multiple empirical studies that observed each pattern. Thorough documentation of several patterns can require substantial text, which could conflict with keeping this “Overview” part of ODD short. In this case, patterns can be thoroughly documented in a separate section of a report or article and summarized in the ODD description; thorough documentation of the patterns in the ODD description is not essential for it to be complete enough to make the model reproducible.</p>
+<p><strong>The specific purpose</strong></p>
+<ul>
+<li>addresses a clear question.</li>
+<li>is specific enough to enable a reader to judge the model’s success at achieving its purpose.</li>
+<li>serves as the primary “filter” for what is and is not in the model<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 58%">
+<col style="width: 41%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Potential pitfalls of the purpose statement</th>
+<th>The Problem</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><strong>It is only general and unspecific.</strong></p>
+<p>Example: model’s purpose is to “explore,” “investigate,” or “study” some system or phenomenon.</p></td>
+<td><p>It is impossible to assess the model.</p>
+<p>You cannot determine what the model needs to contain.</p></td>
+</tr>
+<tr class="even">
+<td><p><strong>It lacks on precise observational patterns</strong></p>
+<p>Example: “it reproduces the system dynamics”.</p></td>
+<td><p>It is impossible to evaluate the model’s usefulness.</p>
+<p>It is difficult to justify (and understand) model design decisions.</p></td>
+</tr>
+</tbody>
+</table>
+<p>An imprecise purpose is often an indication that the modeler simply assembled some mechanisms in an ABM and explored its results. Studies like this can be made more scientific by stating the purpose as a clear question such as “To test whether the mechanisms A, B, and C can explain the observed phenomena X, Y, and Z.”</p>
+<p><strong>Include the higher-level purpose</strong>: is the model developed to understand the system, or to make specific predictions, etc.? Different high-level purposes lead to different model designs. Use the general purposes for this.</p>
+<p><strong>Tie the purpose to the study’s primary results:</strong> what point are you trying to demonstrate with the model? What is the primary analysis you will conduct? Think about the key graph(s) in your “Results” section, where you apply the model to your main research question. The model’s purpose should include the relationship shown in this graph.</p>
+<p><strong>Define your terms.</strong> For example, the purpose “to predict how the vulnerability of a community to flooding depends on public policy” is not clear since “vulnerability to flooding” could mean many things: drowning, travel delays, property damage, etc.; and “public policy” could refer to zoning, insurance, or emergency response. State exactly what inputs and results your model addresses.</p>
+<p><strong>Be specific to this version of the model.</strong> Do not discuss potential future modifications of the model to new purposes or patterns. If the same model is designed for multiple purposes, however, all purposes should be described.</p>
+<p><strong>Do not describe the model yet!!!</strong> In subsequent sections, you can tie the model’s design to the purpose by explaining why specific design decisions were necessary for the model’s purpose.</p>
+<p><strong>Make this purpose statement independent</strong> of any presentation of study purpose elsewhere in the same document. An ODD description should always be complete and understandable by itself.</p>
+<p><strong>Beside quantitative patterns use also qualitative once if they are testable.</strong> Using patterns to evaluate a model requires that they be testable: you need a reproducible way to determine whether the model matches the pattern. Testable patterns can be trends, e.g., that output X increases as variable A decreases (see also Thorngate and Edmonds 2013).</p>
+<p><strong>Document the patterns</strong>: what evidence supports them, and what is their role in justifying the purpose? This can range from stating them as widespread (or your own) beliefs, to citing multiple empirical studies that reported them. If necessary this can be assigned to a separate section as long as the ODD description remains complete enough to make the model reproducible.</p>
 </section>
 <section id="checklist" class="level2" data-number="1.3">
 <h2 data-number="1.3" class="anchored" data-anchor-id="checklist"><span class="header-section-number">1.3</span> Checklist</h2>
@@ -336,7 +422,7 @@ TL;DR – Purpose:
 <p>The model’s purpose is to explore the dynamics of forest ecosystems under climate change. We want to see how different species might respond and if there are any interesting feedback loops. The model considers various tree types, their growth, and competition for resources. We expect to see some changes in forest composition over time. This work is important for understanding ecological resilience.</p>
 </blockquote>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -345,7 +431,7 @@ Expand To See the Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Here’s a breakdown of what’s incorrect or could be improved in the example purpose statement, aligned with the guidance provided in Section 1.2:</p>
 <p><strong>1. Lack of Specificity / “Explore” is too vague:</strong> The statement “to explore the dynamics of forest ecosystems” and “see how different species might respond” is a classic example of an imprecise purpose. It doesn’t state a clear question, hypothesis, or problem the model addresses. It’s an indication that the model might have been built without a sharp focus.<br>
@@ -365,6 +451,17 @@ Expand To See the Solution
 </div>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-gallagher2021" class="csl-entry" role="listitem">
+Gallagher, Cara A, Magda Chudzinska, Angela Larsen-gray, Christopher J Pollock, Sarah N Sells, Patrick J C White, and Uta Berger. 2021. <span>“From Theory to Practice in Pattern-Oriented Modelling : Identifying and Using Empirical Patterns in Predictive Models.”</span> <em>Biological Reviews</em>, 25. <a href="https://doi.org/10.1111/brv.12729">https://doi.org/10.1111/brv.12729</a>.
+</div>
+</div>
+</section>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>Ideally the model should only include entities and mechanisms that are necessary to meet its purpose.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
 </section>
 
 </main> <!-- /main -->
