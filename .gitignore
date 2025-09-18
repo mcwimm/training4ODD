@@ -6,5 +6,5 @@
 
 
 /.quarto/
-
+_book/*
 *.html
