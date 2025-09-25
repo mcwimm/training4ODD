@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -34,14 +34,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../chapters/overview/purpose.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-23102fe0f0b5b1a9f09cc09ebcc8fe5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -95,7 +96,9 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../../index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">ODD Training Material</a> 
         <div class="sidebar-tools-main">
@@ -261,34 +264,64 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-TL;DR – Entities, state variables and scales:
+<span class="screen-reader-only">Tip</span>TL;DR – Entities, state variables and scales:
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <ul>
 <li><strong>Entities:</strong> The distinct “things” or “actors” in your model (e.g., individual agents, spatial units, the environment, collectives). Describe <em>what</em> they represent and <em>why</em> they are included.</li>
-<li><strong>State Variables:</strong> The dynamic (changing) characteristics or attributes of each entity (e.g., age, location, temperature, food availability). Define <em>what</em> each variable represents, its <em>type</em>, <em>units</em>, <em>range</em>, and if it’s <em>dynamic or static</em>. Tables are often best for this.</li>
+<li><strong>State Variables:</strong> The characteristics or attributes of each entity (e.g., gender, age, location, temperature, food availability). Define <em>what</em> each variable represents, its <em>type</em>, <em>units</em>, <em>range</em>, and if it’s <em>dynamic or static</em>. Tables are often best for this.</li>
 <li><strong>Scales:</strong> The spatial and temporal <em>extent</em> (total area/duration) and <em>resolution</em> (size of units, length of time steps) of your model. Also, describe any other dimensions used and provide the <em>rationale</em> for scale choices.</li>
 </ul>
 </div>
 </div>
-<p>Here, we lay out the fundamental “ingredients” of your model: the <strong>entities</strong> (the “things” being modeled), their <strong>state variables</strong> (the characteristics of those things), and the <strong>scales</strong> (the spatial and temporal dimensions) of the simulated world. Regardless of whether your model is designed for explanation, prediction, or another purpose, clearly defining these elements is essential for reproducibility and for a reader to understand <em>what</em> your model represents. This section serves as your model’s “ontology” – explicitly stating what exists and how its basic properties are defined.</p>
-<p>Here we briefly describe the idea of this part….</p>
+<p>Here, we lay out the fundamental “ingredients” of your model: the <strong>entities</strong> (the “things” being modeled), their <strong>state variables</strong> (the characteristics of those things), and the <strong>scales</strong> (the spatial and temporal dimensions) of the simulated world. Clearly defining these elements is essential for reproducibility and for a reader to understand <em>what</em> your model represents.</p>
 </section>
 <section id="guidance" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="guidance"><span class="header-section-number">2.2</span> Guidance</h2>
-<p>This element is crucial for defining the “what” of your model’s world. Pay close attention to these points:</p>
 <ul>
-<li><strong>Provide the rationale for entity choices:</strong> Clearly explain <em>why</em> you chose to include specific entities and, if relevant, <em>why</em> others were excluded. This decision fundamentally shapes your model and should be well-justified. (Reference to pattern-oriented modeling from Element 1 is a useful strategy here).</li>
-<li><strong>Include networks and collectives as entities if they have their own variables/behaviors:</strong> If networks or groups of agents have their own distinct characteristics and actions, they should be described as entities here. If they are purely emergent properties of individual agents, they are not separate entities for this section.</li>
-<li><strong>Do not confuse parameters with state variables:</strong> Parameters are static coefficients or constants, while state variables describe the dynamic (changing over time) characteristics of entities or vary among entities of the same type. Only include state variables here.</li>
-<li><strong>Focus on “low-level” state variables:</strong> Do not include variables that can be easily calculated from other state variables already listed. State variables represent the minimum information needed to fully define an entity’s state at any given moment. Avoid display-only variables.</li>
-<li><strong>Do not describe processes or behaviors yet:</strong> This section is about <em>what is in</em> the model, not <em>what it does</em> or <em>how things change</em>. Details of actions, initialization, or how variables change are covered in subsequent elements (Elements 3, 5, 7).</li>
-<li><strong>Describe space and time explicitly:</strong> State whether your model represents space (1D, 2D, 3D, continuous, discrete, toroidal) and how. Similarly, define how time is represented (discrete steps, continuous events) and the length/extent of time steps.</li>
-<li><strong>Address abstract/non-physical dimensions:</strong> If your model uses other abstract dimensions (e.g., socio-economic status as a dimension), describe them in the same way you would physical space.</li>
-<li><strong>For abstract models, provide conceptual scales:</strong> If your model doesn’t represent a specific real system, approximate or conceptually define your spatial and temporal scales (e.g., “grid cells are urban lots,” “time steps are the time for a family to sell a house”).</li>
-<li><strong>For variable scales, describe typical values:</strong> If your model can apply to systems with varying scales, state which scales are fixed versus variable, and provide typical ranges for the variable ones.</li>
-<li><strong>Provide the rationale for scale choices:</strong> Justify <em>why</em> you chose particular spatial and temporal extents and resolutions, as these decisions can significantly impact model results.</li>
+<li><p><strong>Provide the rationale for entity choices</strong></p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>..
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Clearly explain <em>why</em> you chose to include specific entities. It should be well-justified. Reference to pattern-oriented modeling from the section <em>Purpose</em> is useful here.</p>
+</div>
+</div>
+</div></li>
+<li><p><strong>Include networks and collectives as entities if they have their own state variables/behaviors</strong></p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>..
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Do it only if networks or groups of agents have their own distinct characteristics and actions. If their characteristics are purely emergent properties of individual agents, they are not separate entities.</p>
+</div>
+</div>
+</div></li>
+<li><p><strong>Do not confuse parameters with state variables</strong> Parameters are static coefficients or constants, while state variables describe the dynamic (changing over time) characteristics of entities or vary among entities of the same type. Only include state variables here.</p></li>
+<li><p><strong>Focus on “low-level” state variables</strong> Do not include variables that can be easily calculated from other state variables already listed. State variables represent the minimum information needed to fully define an entity’s state at any given moment. Avoid display-only variables.</p></li>
+<li><p><strong>Do not describe processes or behaviors yet:</strong> This section is about <em>what is in</em> the model, not <em>what it does</em> or <em>how things change</em>. Details of actions, initialization, or how variables change are covered in subsequent elements (Elements 3, 5, 7).</p></li>
+<li><p><strong>Describe space and time explicitly:</strong> State whether your model represents space (1D, 2D, 3D, continuous, discrete, toroidal) and how. Similarly, define how time is represented (discrete steps, continuous events) and the length/extent of time steps.</p></li>
+<li><p><strong>Address abstract/non-physical dimensions:</strong> If your model uses other abstract dimensions (e.g., socio-economic status as a dimension), describe them in the same way you would physical space.</p></li>
+<li><p><strong>For abstract models, provide conceptual scales:</strong> If your model doesn’t represent a specific real system, approximate or conceptually define your spatial and temporal scales (e.g., “grid cells are urban lots,” “time steps are the time for a family to sell a house”).</p></li>
+<li><p><strong>For variable scales, describe typical values:</strong> If your model can apply to systems with varying scales, state which scales are fixed versus variable, and provide typical ranges for the variable ones.</p></li>
+<li><p><strong>Provide the rationale for scale choices:</strong> Justify <em>why</em> you chose particular spatial and temporal extents and resolutions, as these decisions can significantly impact model results.</p></li>
 </ul>
 </section>
 <section id="checklist" class="level2" data-number="2.3">
@@ -366,16 +399,16 @@ TL;DR – Entities, state variables and scales:
 <p>Our model simulates a city. The entities are people, roads, and buildings. People have age, income, and a destination. Roads have length. Buildings have a type (residential, commercial). The model runs for 100 days, with each day being a time step. The city is a 100x100 grid where people move around. We also have a parameter for traffic congestion.</p>
 </blockquote>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Expand To See the Solution
+<span class="screen-reader-only">Caution</span>Expand To See the Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Here’s a breakdown of what’s incorrect or could be significantly improved in the example description:</p>
 <ol type="1">
@@ -455,13 +488,14 @@ Expand To See the Solution
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
