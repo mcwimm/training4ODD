@@ -214,7 +214,6 @@ A significantly improved (but still hypothetical) version might be:
 >
 > 4.  The model produces interesting results which are known from systems dynamics.
 
-
 ::: {.callout-caution collapse="true"}
 ### Solution
 

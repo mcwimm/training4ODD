@@ -2,55 +2,71 @@
 
 ## Idea
 
-::: {.callout-tip}
+::: callout-tip
 ### TL;DR – Entities, state variables and scales:
 
-*   **Entities:** The distinct "things" or "actors" in your model (e.g., individual agents, spatial units, the environment, collectives). Describe *what* they represent and *why* they are included.
-*   **State Variables:** The dynamic (changing) characteristics or attributes of each entity (e.g., age, location, temperature, food availability). Define *what* each variable represents, its *type*, *units*, *range*, and if it's *dynamic or static*. Tables are often best for this.
-*   **Scales:** The spatial and temporal *extent* (total area/duration) and *resolution* (size of units, length of time steps) of your model. Also, describe any other dimensions used and provide the *rationale* for scale choices.
-
+-   **Entities:** The distinct "things" or "actors" in your model (e.g., individual agents, spatial units, the environment, collectives). Describe *what* they represent and *why* they are included.
+-   **State Variables:** The characteristics or attributes of each entity (e.g., gender, age, location, temperature, food availability). Define *what* each variable represents, its *type*, *units*, *range*, and if it's *dynamic or static*. Tables are often best for this.
+-   **Scales:** The spatial and temporal *extent* (total area/duration) and *resolution* (size of units, length of time steps) of your model. Also, describe any other dimensions used and provide the *rationale* for scale choices.
 :::
 
-Here, we lay out the fundamental "ingredients" of your model: the **entities** (the "things" being modeled), their **state variables** (the characteristics of those things), and the **scales** (the spatial and temporal dimensions) of the simulated world. Regardless of whether your model is designed for explanation, prediction, or another purpose, clearly defining these elements is essential for reproducibility and for a reader to understand *what* your model represents. This section serves as your model's "ontology" – explicitly stating what exists and how its basic properties are defined.
-
-Here we briefly describe the idea of this part....
+Here, we lay out the fundamental "ingredients" of your model: the **entities** (the "things" being modeled), their **state variables** (the characteristics of those things), and the **scales** (the spatial and temporal dimensions) of the simulated world. Clearly defining these elements is essential for reproducibility and for a reader to understand *what* your model represents.
 
 ## Guidance
 
-This element is crucial for defining the "what" of your model's world. Pay close attention to these points:
+-   **Provide the rationale for entity choices**
 
-*   **Provide the rationale for entity choices:** Clearly explain *why* you chose to include specific entities and, if relevant, *why* others were excluded. This decision fundamentally shapes your model and should be well-justified. (Reference to pattern-oriented modeling from Element 1 is a useful strategy here).
-*   **Include networks and collectives as entities if they have their own variables/behaviors:** If networks or groups of agents have their own distinct characteristics and actions, they should be described as entities here. If they are purely emergent properties of individual agents, they are not separate entities for this section.
-*   **Do not confuse parameters with state variables:** Parameters are static coefficients or constants, while state variables describe the dynamic (changing over time) characteristics of entities or vary among entities of the same type. Only include state variables here.
-*   **Focus on "low-level" state variables:** Do not include variables that can be easily calculated from other state variables already listed. State variables represent the minimum information needed to fully define an entity's state at any given moment. Avoid display-only variables.
-*   **Do not describe processes or behaviors yet:** This section is about *what is in* the model, not *what it does* or *how things change*. Details of actions, initialization, or how variables change are covered in subsequent elements (Elements 3, 5, 7).
-*   **Describe space and time explicitly:** State whether your model represents space (1D, 2D, 3D, continuous, discrete, toroidal) and how. Similarly, define how time is represented (discrete steps, continuous events) and the length/extent of time steps.
-*   **Address abstract/non-physical dimensions:** If your model uses other abstract dimensions (e.g., socio-economic status as a dimension), describe them in the same way you would physical space.
-*   **For abstract models, provide conceptual scales:** If your model doesn't represent a specific real system, approximate or conceptually define your spatial and temporal scales (e.g., "grid cells are urban lots," "time steps are the time for a family to sell a house").
-*   **For variable scales, describe typical values:** If your model can apply to systems with varying scales, state which scales are fixed versus variable, and provide typical ranges for the variable ones.
-*   **Provide the rationale for scale choices:** Justify *why* you chose particular spatial and temporal extents and resolutions, as these decisions can significantly impact model results.
+    ::: {.callout-note collapse="true" icon="false"}
+    ## ..
+
+    Clearly explain *why* you chose to include specific entities. It should be well-justified. Reference to pattern-oriented modeling from the section *Purpose* is useful here.
+    :::
+
+-   **Include networks and collectives as entities if they have their own state variables/behaviors**
+
+    ::: {.callout-note collapse="true" icon="false"}
+    ## ..
+
+    Do it only if networks or groups of agents have their own distinct characteristics and actions. If their characteristics are purely emergent properties of individual agents, they are not separate entities.
+    :::
+
+-   **Do not confuse parameters with state variables** Parameters are static coefficients or constants, while state variables describe the dynamic (changing over time) characteristics of entities or vary among entities of the same type. Only include state variables here.
+
+-   **Focus on "low-level" state variables** Do not include variables that can be easily calculated from other state variables already listed. State variables represent the minimum information needed to fully define an entity's state at any given moment. Avoid display-only variables.
+
+-   **Do not describe processes or behaviors yet:** This section is about *what is in* the model, not *what it does* or *how things change*. Details of actions, initialization, or how variables change are covered in subsequent elements (Elements 3, 5, 7).
+
+-   **Describe space and time explicitly:** State whether your model represents space (1D, 2D, 3D, continuous, discrete, toroidal) and how. Similarly, define how time is represented (discrete steps, continuous events) and the length/extent of time steps.
+
+-   **Address abstract/non-physical dimensions:** If your model uses other abstract dimensions (e.g., socio-economic status as a dimension), describe them in the same way you would physical space.
+
+-   **For abstract models, provide conceptual scales:** If your model doesn't represent a specific real system, approximate or conceptually define your spatial and temporal scales (e.g., "grid cells are urban lots," "time steps are the time for a family to sell a house").
+
+-   **For variable scales, describe typical values:** If your model can apply to systems with varying scales, state which scales are fixed versus variable, and provide typical ranges for the variable ones.
+
+-   **Provide the rationale for scale choices:** Justify *why* you chose particular spatial and temporal extents and resolutions, as these decisions can significantly impact model results.
 
 ## Checklist
 
 The ODD text for this element should describe:
 
-*   The kinds of entities in the model and what they represent.
-*   Why those entities were included and, if relevant, why other entities were not included.
-*   The state variables of each kind of entity, usually in a table. For each state variable, describe:
-    *   What it represents (including units).
-    *   Whether it is dynamic (changing over time) or static.
-    *   Its type (integer, float, text, boolean, etc.).
-    *   Its range (discrete values, limited numerical range, any value).
-*   Whether the model represents time and, if so:
-    *   Whether time is discrete, continuous, or both.
-    *   The length of time steps (temporal resolution).
-    *   How much total time is represented in a simulation (temporal extent).
-*   Whether the model represents space and, if so:
-    *   Whether space is discrete, continuous, or both.
-    *   If discrete, describe unit shape and size (spatial resolution).
-    *   How much total space is represented (spatial extent).
-*   Whether any other dimensions are represented, and how.
-*   The rationale for why the spatial and temporal scales were chosen.
+-   The kinds of entities in the model and what they represent.
+-   Why those entities were included and, if relevant, why other entities were not included.
+-   The state variables of each kind of entity, usually in a table. For each state variable, describe:
+    -   What it represents (including units).
+    -   Whether it is dynamic (changing over time) or static.
+    -   Its type (integer, float, text, boolean, etc.).
+    -   Its range (discrete values, limited numerical range, any value).
+-   Whether the model represents time and, if so:
+    -   Whether time is discrete, continuous, or both.
+    -   The length of time steps (temporal resolution).
+    -   How much total time is represented in a simulation (temporal extent).
+-   Whether the model represents space and, if so:
+    -   Whether space is discrete, continuous, or both.
+    -   If discrete, describe unit shape and size (spatial resolution).
+    -   How much total space is represented (spatial extent).
+-   Whether any other dimensions are represented, and how.
+-   The rationale for why the spatial and temporal scales were chosen.
 
 ## Examples
 
@@ -58,23 +74,23 @@ Here are examples of how entities, their state variables, and the model's scales
 
 #### Example descriptions of Entities
 
-*   **[Knoeri C, Nikolic I, Althaus HJ, Binder CR. 2014. Enhancing recycling of construction materials...]**
-    *   *This example effectively shows how diverse entities (stakeholders, projects, grid cells, global environment) are defined and their roles explained within an ABM context.*
+-   **\[Knoeri C, Nikolic I, Althaus HJ, Binder CR. 2014. Enhancing recycling of construction materials...\]**
+    -   *This example effectively shows how diverse entities (stakeholders, projects, grid cells, global environment) are defined and their roles explained within an ABM context.*
 
 #### Example descriptions of State Variables
 
-*   **[Railsback SF, Harvey BC, Ayllón D. InSTREAM 7 Model Description. Unpublished report.]**
-    *   *This example demonstrates the use of tables for clear, concise presentation of observer (global environment) and cell (spatial unit) state variables, including their types, units, and meanings. It highlights the crucial distinction between static and dynamic variables.*
+-   **\[Railsback SF, Harvey BC, Ayllón D. InSTREAM 7 Model Description. Unpublished report.\]**
+    -   *This example demonstrates the use of tables for clear, concise presentation of observer (global environment) and cell (spatial unit) state variables, including their types, units, and meanings. It highlights the crucial distinction between static and dynamic variables.*
 
 #### Example descriptions of Scales
 
-*   **[Railsback SF, Johnson MD. 2011. Pattern-oriented modeling of bird foraging and pest control in coffee farms...]**
-    *   *This example illustrates how to define spatial and temporal extent and resolution for an ecological ABM, including the important point about mixed time steps (e.g., 1-day step for general processes, but much shorter for specific agent behaviors like foraging).*
-*   **[Natalini D, Bravo G. 2014. Encouraging sustainable transport choices in American households...]**
-    *   *This example demonstrates the use of abstract or non-geographic dimensions (e.g., preference space with X, Y, Z coordinates for preferences) as "scales" within a social simulation model, showing how ODD can describe non-physical model spaces.*
-*   **[Polhill JG, Parker D, Brown D, Grimm V. 2008. Using the ODD protocol for describing three agent-based social simulation models of land-use change...]**
-    *   *This example shows how to describe scales for abstract models where absolute physical or temporal units are not fixed. It illustrates that even in abstract models, conceptual definitions of scales (e.g., grid cells as urban lots, time steps as "time for a family to sell a house") are necessary.*  
-    
+-   **\[Railsback SF, Johnson MD. 2011. Pattern-oriented modeling of bird foraging and pest control in coffee farms...\]**
+    -   *This example illustrates how to define spatial and temporal extent and resolution for an ecological ABM, including the important point about mixed time steps (e.g., 1-day step for general processes, but much shorter for specific agent behaviors like foraging).*
+-   **\[Natalini D, Bravo G. 2014. Encouraging sustainable transport choices in American households...\]**
+    -   *This example demonstrates the use of abstract or non-geographic dimensions (e.g., preference space with X, Y, Z coordinates for preferences) as "scales" within a social simulation model, showing how ODD can describe non-physical model spaces.*
+-   **\[Polhill JG, Parker D, Brown D, Grimm V. 2008. Using the ODD protocol for describing three agent-based social simulation models of land-use change...\]**
+    -   *This example shows how to describe scales for abstract models where absolute physical or temporal units are not fixed. It illustrates that even in abstract models, conceptual definitions of scales (e.g., grid cells as urban lots, time steps as "time for a family to sell a house") are necessary.*
+
 ## Test yourself
 
 Can you identify what is incorrect or could be significantly improved in the following description of a model's entities, state variables, and scales?
@@ -84,35 +100,20 @@ Can you identify what is incorrect or could be significantly improved in the fol
 ::: {.callout-caution collapse="true"}
 ### Expand To See the Solution
 
-Here’s a breakdown of what’s incorrect or could be significantly improved in the example description:  
+Here’s a breakdown of what’s incorrect or could be significantly improved in the example description:
 
 1.  **Missing Rationale for Entities:** While the entities are listed, there's no explanation of *why* these specific entities (people, roads, buildings) were chosen, or why other potential entities (e.g., vehicles, city government, businesses) were *not* included. The "Rationale" guidance states this is a fundamental design decision that needs justification.
 2.  **Incomplete State Variable Description:**
-    *   **Units and Range:** For "age," "income," and "length" (of roads), units and typical ranges are missing. What are the units for income (e.g., dollars, thousands of dollars)? What's the age range (0-100 years)?
-    *   **Type:** The "type" of variable (integer, float, boolean, text string) is not specified for any state variable.
-    *   **Dynamic vs. Static:** While "age" is implicitly dynamic, it's not explicitly stated. Are road "length" and building "type" static or dynamic?
-    *   **"Destination" as a State Variable:** While "destination" can be a state variable for a person, its representation isn't clear (e.g., a coordinate, a building ID, a text string). It also hints at a *behavior* (moving to a destination) which starts to stray into Element 3.
+    -   **Units and Range:** For "age," "income," and "length" (of roads), units and typical ranges are missing. What are the units for income (e.g., dollars, thousands of dollars)? What's the age range (0-100 years)?
+    -   **Type:** The "type" of variable (integer, float, boolean, text string) is not specified for any state variable.
+    -   **Dynamic vs. Static:** While "age" is implicitly dynamic, it's not explicitly stated. Are road "length" and building "type" static or dynamic?
+    -   **"Destination" as a State Variable:** While "destination" can be a state variable for a person, its representation isn't clear (e.g., a coordinate, a building ID, a text string). It also hints at a *behavior* (moving to a destination) which starts to stray into Element 3.
 3.  **Confusion of Parameters with State Variables:** "We also have a parameter for traffic congestion." A parameter belongs in Element 7 (Submodels) where it's used in an equation or algorithm, not here as a description of a part of the modeled world's state. If "traffic congestion" is a *dynamic characteristic of roads* that changes during the simulation, it should be a state variable of the `Road` entity. If it's a *fixed value* throughout the simulation, it's a parameter. The current phrasing is ambiguous.
 4.  **Missing Rationale for Scales:** The spatial and temporal scales are stated ("100 days," "100x100 grid"), but there's no justification for *why* these specific scales were chosen. Why 100 days? Why a 100x100 grid? What real-world area does 100x100 grid represent? (e.g., "each grid cell represents 100m x 100m, representing a total area of 100 km²"). This justification is crucial for scientific rigor.
 5.  **Lack of Detail on Spatial Representation:** "The city is a 100x100 grid where people move around" is too brief. Is it discrete (cells) or continuous? Is it toroidal (wraps around) or bounded? These details are important for reproducibility.
 6.  **"People move around" - Describing Behavior:** Similar to "destination," this phrase hints at model processes, which should be avoided in Element 2. The purpose of Element 2 is to describe *what exists*, not *what happens*.
 
-A significantly improved (but still hypothetical) version might be:  
+A significantly improved (but still hypothetical) version might be:
 
-> The entities in this model are **People**, **Roads**, and **Buildings**. **People** are included to represent the individual decision-makers whose movements influence traffic patterns. **Roads** and **Buildings** are included as essential environmental structures that constrain and facilitate movement within the city. Other potential entities, such as vehicles or specific businesses, were omitted to maintain model simplicity and focus on emergent traffic patterns from individual routing choices.
-*   **People** (agents):
-    *   `age`: Integer, years [0-100]. Dynamic.
-    *   `income`: Float, thousands of USD/year [0-500]. Dynamic.
-    *   `current_location`: Coordinate pair (x, y) on grid. Dynamic.
-    *   `daily_destination`: Coordinate pair (x, y) on grid. Dynamic.
-*   **Roads** (static environmental entities):
-    *   `segment_length`: Float, meters [10-500]. Static.
-    *   `traffic_flow`: Integer, vehicles/hour [0-2000]. Dynamic.
-    *   `road_type`: Text string {"arterial", "local"}. Static.
-*   **Buildings** (static environmental entities):
-    *   `building_id`: Integer. Static.
-    *   `building_type`: Text string {"residential", "commercial", "public"}. Static.
-    *   `occupancy_status`: Boolean {TRUE, FALSE}. Dynamic.
-The model represents a 2D spatial extent of 10x10 km, modeled as a **100x100 discrete grid** of square cells, where each cell represents 100x100 meters. The spatial boundaries are **bounded** (no toroidal wrapping) to simulate a finite urban area. The temporal scale is represented by **discrete time steps**, with each time step representing **1 hour**. Simulations run for a total temporal extent of **2400 hours (100 days)**. These scales were chosen to capture diurnal commuting patterns within a medium-sized urban area and to allow for sufficient simulation time for traffic congestion patterns to emerge and stabilize.
-
+> The entities in this model are **People**, **Roads**, and **Buildings**. **People** are included to represent the individual decision-makers whose movements influence traffic patterns. **Roads** and **Buildings** are included as essential environmental structures that constrain and facilitate movement within the city. Other potential entities, such as vehicles or specific businesses, were omitted to maintain model simplicity and focus on emergent traffic patterns from individual routing choices. \* **People** (agents): \* `age`: Integer, years \[0-100\]. Dynamic. \* `income`: Float, thousands of USD/year \[0-500\]. Dynamic. \* `current_location`: Coordinate pair (x, y) on grid. Dynamic. \* `daily_destination`: Coordinate pair (x, y) on grid. Dynamic. \* **Roads** (static environmental entities): \* `segment_length`: Float, meters \[10-500\]. Static. \* `traffic_flow`: Integer, vehicles/hour \[0-2000\]. Dynamic. \* `road_type`: Text string {"arterial", "local"}. Static. \* **Buildings** (static environmental entities): \* `building_id`: Integer. Static. \* `building_type`: Text string {"residential", "commercial", "public"}. Static. \* `occupancy_status`: Boolean {TRUE, FALSE}. Dynamic. The model represents a 2D spatial extent of 10x10 km, modeled as a **100x100 discrete grid** of square cells, where each cell represents 100x100 meters. The spatial boundaries are **bounded** (no toroidal wrapping) to simulate a finite urban area. The temporal scale is represented by **discrete time steps**, with each time step representing **1 hour**. Simulations run for a total temporal extent of **2400 hours (100 days)**. These scales were chosen to capture diurnal commuting patterns within a medium-sized urban area and to allow for sufficient simulation time for traffic congestion patterns to emerge and stabilize.
 :::
