@@ -62,7 +62,7 @@ div.csl-indent {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-4b7ca5601265aaa8514e436f72703a11.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -90,11 +90,18 @@ div.csl-indent {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>
 
 
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar docked quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -115,12 +122,29 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">ODD Training Material</a> 
         <div class="sidebar-tools-main">
-    <a href="https://..." title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-git"></i></a>
+    <a href="https://github.com/mcwimm/training4ODD" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <div class="dropdown">
+      <a href="" title="Download" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" role="link" aria-label="Download"><i class="bi bi-download"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../../ODD-Training-Material.pdf">
+              <i class="bi bi-file-pdf pe-1"></i>
+            Download PDF
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="../../ODD-Training-Material.epub">
+              <i class="bi bi-journal pe-1"></i>
+            Download ePub
+            </a>
+          </li>
+      </ul>
+    </div>
 </div>
     </div>
       </div>
@@ -247,12 +271,16 @@ div.csl-indent {
   <li><a href="#idea" id="toc-idea" class="nav-link active" data-scroll-target="#idea"><span class="header-section-number">1.1</span> Idea</a></li>
   <li><a href="#guidance" id="toc-guidance" class="nav-link" data-scroll-target="#guidance"><span class="header-section-number">1.2</span> Guidance</a></li>
   <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist"><span class="header-section-number">1.3</span> Checklist</a></li>
-  <li><a href="#examples-of-model-purposes" id="toc-examples-of-model-purposes" class="nav-link" data-scroll-target="#examples-of-model-purposes"><span class="header-section-number">1.4</span> Examples of Model Purposes</a></li>
-  <li><a href="#examples-of-model-patterns" id="toc-examples-of-model-patterns" class="nav-link" data-scroll-target="#examples-of-model-patterns"><span class="header-section-number">1.5</span> Examples of Model Patterns</a></li>
-  <li><a href="#examples-of-model-types" id="toc-examples-of-model-types" class="nav-link" data-scroll-target="#examples-of-model-types"><span class="header-section-number">1.6</span> Examples of Model Types</a></li>
-  <li><a href="#test-yourself" id="toc-test-yourself" class="nav-link" data-scroll-target="#test-yourself"><span class="header-section-number">1.7</span> Test yourself</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples"><span class="header-section-number">1.4</span> Examples</a>
+  <ul class="collapse">
+  <li><a href="#of-model-purposes" id="toc-of-model-purposes" class="nav-link" data-scroll-target="#of-model-purposes"><span class="header-section-number">1.4.1</span> … of Model Purposes</a></li>
+  <li><a href="#of-model-patterns" id="toc-of-model-patterns" class="nav-link" data-scroll-target="#of-model-patterns"><span class="header-section-number">1.4.2</span> … of Model Patterns</a></li>
+  <li><a href="#of-model-types" id="toc-of-model-types" class="nav-link" data-scroll-target="#of-model-types"><span class="header-section-number">1.4.3</span> … of Model Types</a></li>
+  </ul></li>
+  <li><a href="#key-takeaways" id="toc-key-takeaways" class="nav-link" data-scroll-target="#key-takeaways"><span class="header-section-number">1.5</span> Key takeaways</a></li>
+  <li><a href="#test-yourself" id="toc-test-yourself" class="nav-link" data-scroll-target="#test-yourself"><span class="header-section-number">1.6</span> Test yourself</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://.../edit/main/chapters/overview/purpose.qmd" class="toc-action"><i class="bi bi-git"></i>Edit this page</a></li><li><a href="https://.../issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/mcwimm/training4ODD/blob/main/chapters/overview/purpose.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/mcwimm/training4ODD/edit/main/chapters/overview/purpose.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/mcwimm/training4ODD/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -276,8 +304,6 @@ div.csl-indent {
 </header>
 
 
-<section id="idea" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="idea"><span class="header-section-number">1.1</span> Idea</h2>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -297,6 +323,8 @@ div.csl-indent {
 <p>The purpose defines the model’s role in the research — its “why”, “focus” and “approach”.</p>
 </div>
 </div>
+<section id="idea" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="idea"><span class="header-section-number">1.1</span> Idea</h2>
 <p>ODD starts with a concise and specific statement of the purpose(s) for which the model was developed. This should be a clear question, problem, or hypothesis. The purpose assigns your model to a <strong>general purpose first</strong>, e.g.</p>
 <ul>
 <li>prediction</li>
@@ -306,7 +334,7 @@ div.csl-indent {
 <li>illustration</li>
 <li>analogy</li>
 <li>social learning</li>
-<li>..</li>
+<li>…</li>
 </ul>
 <p><strong>Identify one or more of these categories before you state the specific purpose of your model.</strong></p>
 <p>For most <strong>specific purposes</strong>, the model will be assumed useful only if it can <strong>reproduce observational patterns</strong>. They occur at the individual or system level; and are believed to be driven by the same processes, variables, etc. that the model considers. Not reproducing patterns can also be an important result because it indicates that some processes are missing or inadequately represented. <strong>Specify the patterns you will use as criteria to decide whether your model is useful for its purpose.</strong></p>
@@ -431,58 +459,44 @@ div.csl-indent {
 </ul>
 <pre style="border "><code></code></pre>
 </section>
-<section id="examples-of-model-purposes" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="examples-of-model-purposes"><span class="header-section-number">1.4</span> Examples of Model Purposes</h2>
+<section id="examples" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="examples"><span class="header-section-number">1.4</span> Examples</h2>
+<section id="of-model-purposes" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="of-model-purposes"><span class="header-section-number">1.4.1</span> … of Model Purposes</h3>
 <p><strong>Specific model purposes</strong> assigned to three <strong>general purposes</strong> identified by Edmonds et al.&nbsp;(2019)</p>
-<ul>
-<li><strong><em>prediction</em></strong> (“data that is not currently known to a useful degree of accuracy <em>via computations using the model</em>”, Carter et al.&nbsp;2015)</li>
-</ul>
+<p><strong>Prediction</strong> (“data that is not currently known to a useful degree of accuracy via computations using the model”, Carter et al.&nbsp;2015)</p>
 <blockquote class="blockquote">
 <p>The proximate purpose of the model is to predict the dynamics of the number, location, and size of tiger territories in response to habitat quality and tiger density… The ultimate purpose of the model,</p>
 </blockquote>
-<ul>
-<li><strong><em>explanation</em></strong> (“find a possible causal chain from a set-up to its consequences”, after DeAngelis et al.&nbsp;1980)</li>
-</ul>
+<p><strong>Explanation</strong> (“find a possible causal chain from a set-up to its consequences”, after DeAngelis et al.&nbsp;1980)</p>
 <blockquote class="blockquote">
 <p>The purpose of this model is to illustrate a potential explanation for how small changes in the initial size distribution and growth of a cohort of cannibalistic fish can produce large differences in later size distribution, an example of how positive feedback can cause rapid divergence within a system. The mechanism driving the potential explanation is interaction among slow growth from feeding on invertebrates, rapid growth from cannibalism, and “gape limitation” which allows one fish to eat another only if the two fish are sufficiently different in size.</p>
 </blockquote>
-<ul>
-<li><strong><em>description</em></strong> (“what is important of a specific observed case”, Arfaoui et al.&nbsp;2014) .</li>
-</ul>
+<p><strong>Description</strong> (“what is important of a specific observed case”, Arfaoui et al.&nbsp;2014) .</p>
 <blockquote class="blockquote">
 <p>The purpose of our model is to understand how different configurations in the policy design of REACH affect the dynamics of eco-innovation and shape market selection and innovation. In our model we take into account supplier–user interactions because they represent an essential element in the development of new technologies, particularly in the chemical industry. Additionally, some stylized facts that illustrate the competition between organic solvents and biosolvents in the surface treatment activity are considered. The objective is to examine to which extent different combinations of flexible and stringent instruments of REACH can lead to the development and diffusion of alternative solvents (biosolvents)</p>
 </blockquote>
 </section>
-<section id="examples-of-model-patterns" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="examples-of-model-patterns"><span class="header-section-number">1.5</span> Examples of Model Patterns</h2>
-<p><strong><em>Qualitative patterns</em></strong></p>
-<ul>
-<li>vertical migration by Daphnia (Railsback, S. F. and B. C. Harvey. 2020)</li>
-</ul>
+<section id="of-model-patterns" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="of-model-patterns"><span class="header-section-number">1.4.2</span> … of Model Patterns</h3>
+<p><strong>Qualitative patterns</strong>; vertical migration by Daphnia (Railsback, S. F. and B. C. Harvey. 2020)</p>
 <blockquote class="blockquote">
 <p>The purpose of this model is to explain and understand diurnal vertical migration (VM) in zooplankton and how it interacts with a life history tradeoff, the allocation of mass to reproduction or growth. .. We evaluate our model by its ability to reproduce three patterns. The first two are of primary importance because they were observed in extensive laboratory experiments by Loose and Dawidowicz (1994) and appear driven directly by the risk-growth tradeoff (Figure 5.1)… Pattern 1: Response of VM to predation risk. .. Pattern 2. Selection of slightly shallower depths with low food. … Pattern 3. Response of reproductive allocation to predation risk. …</p>
 </blockquote>
-<p><strong><em>Quantitative patterns</em></strong></p>
+<p><strong>Quantitative patterns</strong></p>
 <ul>
 <li>???</li>
 </ul>
 </section>
-<section id="examples-of-model-types" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="examples-of-model-types"><span class="header-section-number">1.6</span> Examples of Model Types</h2>
+<section id="of-model-types" class="level3" data-number="1.4.3">
+<h3 data-number="1.4.3" class="anchored" data-anchor-id="of-model-types"><span class="header-section-number">1.4.3</span> … of Model Types</h3>
 <ul>
 <li>???</li>
 </ul>
-<pre style="border "><code></code></pre>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Key takeaways
-</div>
-</div>
-<div class="callout-body-container callout-body">
+</section>
+</section>
+<section id="key-takeaways" class="level2 dg-box dg-box--border-left" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="key-takeaways"><span class="header-section-number">1.5</span> Key takeaways</h2>
 <ol type="1">
 <li><p><strong>Patterns are observations not Mechanisms:</strong> they describe <em>what is observed</em>, not <em>how it happens</em>.</p></li>
 <li><p><strong>Qualitative should be testable:</strong> described them with enough detail and context. Run the model under analogous conditions and check if its output matches the described trend(s).</p></li>
@@ -491,15 +505,36 @@ div.csl-indent {
 <li><p><strong>Hierarchy of Importance (Optional but useful):</strong> see <em>Daphnia</em> example “The first two are of primary importance.” This helps to tie the results to the model’s core purpose or represent stronger empirical evidence than others.</p></li>
 <li><p><strong>Connection to “Pattern-Oriented Modeling” (POM):</strong> POM is an established strategy for designing and evaluating ABMs. Patterns <strong>are not just for verification, but also for guiding model design</strong> (please check XXX).</p></li>
 </ol>
-</div>
-</div>
 </section>
-<section id="test-yourself" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="test-yourself"><span class="header-section-number">1.7</span> Test yourself</h2>
+<section id="test-yourself" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="test-yourself"><span class="header-section-number">1.6</span> Test yourself</h2>
+<div class="dg-box">
 <p><strong>Task 1: Can you identify what is incorrect in the following description of a model’s purpose?</strong></p>
-<blockquote class="blockquote">
 <p>The model’s purpose is to explore the dynamics of forest ecosystems under climate change. We want to see how different species might respond and if there are any interesting feedback loops. The model considers various tree types, their growth, and competition for resources. We expect to see some changes in forest composition over time. This work is important for understanding ecological resilience.</p>
-</blockquote>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Hints
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Here’s a breakdown of what’s incorrect or could be improved in the example purpose statement, aligned with the guidance provided in Section 1.2:</p>
+<p><strong>1. Lack of Specificity / “Explore” is too vague:</strong> The statement “to explore the dynamics of forest ecosystems” and “see how different species might respond” is a classic example of an imprecise purpose. It doesn’t state a clear question, hypothesis, or problem the model addresses. It’s an indication that the model might have been built without a sharp focus.<br>
+<strong>2. Missing a Clear Question/Hypothesis:</strong> While it mentions “feedback loops,” it doesn’t pose a testable question like “To what extent do species-specific physiological adaptations to drought, combined with competitive interactions, influence the long-term carbon sequestration capacity of temperate forests under projected IPCC climate scenarios?”</p>
+<p><strong>3. No Defined “Higher-Level Purpose”:</strong> Is it for prediction, explanation, description, or theoretical exposition? “Understanding ecological resilience” is a noble goal, but how does this specific model contribute to it? What kind of understanding will it generate?</p>
+<p><strong>4. No Tie to Primary Results/Success Criteria:</strong> “We expect to see some changes in forest composition over time” is a vague outcome, not a specific criterion for success. How will the authors or readers judge if the model successfully explored or understood anything? What specific graphs or relationships would demonstrate this?</p>
+<p><strong>5. No Testable Patterns:</strong> This is the most significant omission given the updated ODD. There are no specified patterns (observations, trends, general beliefs) that the model should reproduce to demonstrate its realism or utility. What specific changes in forest composition are expected based on empirical data or theory? How will “interesting feedback loops” be identified and verified?</p>
+<p><strong>6. Describes the Model Prematurely:</strong> “The model considers various tree types, their growth, and competition for resources” starts to describe how the model works, which should be reserved for later sections (Entities, State Variables, Processes, etc.). The Purpose section should focus solely on the “why.”</p>
+<p><strong>7. Not Specific to This Version:</strong> It doesn’t clearly delineate what this particular model aims to achieve versus potential future expansions.</p>
+<p><strong>8. Ambiguous Terms:</strong> “Forest ecosystems,” “different species,” “various tree types,” and “ecological resilience” are all very broad. What specific types of forests, species, or aspects of resilience are being modeled?</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -512,29 +547,18 @@ div.csl-indent {
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Here’s a breakdown of what’s incorrect or could be improved in the example purpose statement, aligned with the guidance provided in Section 1.2:</p>
-<p><strong>1. Lack of Specificity / “Explore” is too vague:</strong> The statement “to explore the dynamics of forest ecosystems” and “see how different species might respond” is a classic example of an imprecise purpose. It doesn’t state a clear question, hypothesis, or problem the model addresses. It’s an indication that the model might have been built without a sharp focus.<br>
-<strong>2. Missing a Clear Question/Hypothesis:</strong> While it mentions “feedback loops,” it doesn’t pose a testable question like “To what extent do species-specific physiological adaptations to drought, combined with competitive interactions, influence the long-term carbon sequestration capacity of temperate forests under projected IPCC climate scenarios?”</p>
-<p><strong>3. No Defined “Higher-Level Purpose”:</strong> Is it for prediction, explanation, description, or theoretical exposition? “Understanding ecological resilience” is a noble goal, but how does this specific model contribute to it? What kind of understanding will it generate?</p>
-<p><strong>4. No Tie to Primary Results/Success Criteria:</strong> “We expect to see some changes in forest composition over time” is a vague outcome, not a specific criterion for success. How will the authors or readers judge if the model successfully explored or understood anything? What specific graphs or relationships would demonstrate this?</p>
-<p><strong>5. No Testable Patterns:</strong> This is the most significant omission given the updated ODD. There are no specified patterns (observations, trends, general beliefs) that the model should reproduce to demonstrate its realism or utility. What specific changes in forest composition are expected based on empirical data or theory? How will “interesting feedback loops” be identified and verified?</p>
-<p><strong>6. Describes the Model Prematurely:</strong> “The model considers various tree types, their growth, and competition for resources” starts to describe how the model works, which should be reserved for later sections (Entities, State Variables, Processes, etc.). The Purpose section should focus solely on the “why.”</p>
-<p><strong>7. Not Specific to This Version:</strong> It doesn’t clearly delineate what this particular model aims to achieve versus potential future expansions.</p>
-<p><strong>8. Ambiguous Terms:</strong> “Forest ecosystems,” “different species,” “various tree types,” and “ecological resilience” are all very broad. What specific types of forests, species, or aspects of resilience are being modeled?</p>
 <p>A significantly improved (but still hypothetical) version might be:</p>
-<blockquote class="blockquote">
-<p>The purpose of this model is to test the hypothesis that increased frequency and intensity of drought events, driven by climate change, will lead to a shift in temperate forest composition from drought-sensitive coniferous species to more drought-tolerant deciduous species. Specifically, we aim to explain the observed pattern of increasing deciduous tree dominance in the Pacific Northwest region over the last two decades, and to predict the magnitude of this compositional shift by 2050 under IPCC RCP 8.5 climate projections. The model’s suitability will be evaluated by its ability to reproduce two key patterns: (1) the observed decline in average growth rates of Douglas Fir following historical drought years, and (2) the pattern of increased seedling establishment of Oak species in areas previously dominated by coniferous trees after severe droughts.</p>
-</blockquote>
+<p><em>The purpose of this model is to test the hypothesis that increased frequency and intensity of drought events, driven by climate change, will lead to a shift in temperate forest composition from drought-sensitive coniferous species to more drought-tolerant deciduous species. Specifically, we aim to explain the observed pattern of increasing deciduous tree dominance in the Pacific Northwest region over the last two decades, and to predict the magnitude of this compositional shift by 2050 under IPCC RCP 8.5 climate projections. The model’s suitability will be evaluated by its ability to reproduce two key patterns: (1) the observed decline in average growth rates of Douglas Fir following historical drought years, and (2) the pattern of increased seedling establishment of Oak species in areas previously dominated by coniferous trees after severe droughts.</em></p>
 </div>
 </div>
 </div>
+</div>
+<div class="dg-box">
 <p><strong>Task 2: Which of the statements describes the observational patterns correctly?</strong></p>
-<blockquote class="blockquote">
 <ol type="a">
 <li>“The model shows the detection of daphnia kairomones which induces the VM to mimize predation risk.</li>
 <li>“The model reproduces the response of VM to predation risk”</li>
 </ol>
-</blockquote>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -551,6 +575,8 @@ div.csl-indent {
 </div>
 </div>
 </div>
+</div>
+<div class="dg-box">
 <p><strong>Task 3:</strong> Select those specific purposes which are too vague and rewrite them (if the context allows you).</p>
 <blockquote class="blockquote">
 <ol type="1">
@@ -577,6 +603,7 @@ div.csl-indent {
 <li>the “typical diameter distribution” should be explicitly stated, e.g., “the J-shape distribution in the regeneration areas; the”u-shape distribution for the mature forest area”.</li>
 <li>Such statements should be generally avoided.</li>
 </ol>
+</div>
 </div>
 </div>
 </div>
@@ -669,7 +696,7 @@ Gallagher, Cara A, Magda Chudzinska, Angela Larsen-gray, Christopher J Pollock, 
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/\.\.\.");
+        var filterRegex = new RegExp("https:\/\/mcwimm\.github\.io\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1016,7 +1043,7 @@ Gallagher, Cara A, Magda Chudzinska, Angela Larsen-gray, Christopher J Pollock, 
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://.../edit/main/chapters/overview/purpose.qmd" class="toc-action"><i class="bi bi-git"></i>Edit this page</a></li><li><a href="https://.../issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/mcwimm/training4ODD/blob/main/chapters/overview/purpose.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/mcwimm/training4ODD/edit/main/chapters/overview/purpose.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/mcwimm/training4ODD/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This book was built with <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
