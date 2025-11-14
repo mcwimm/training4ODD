@@ -1,7 +1,5 @@
 # Purpose
 
-## Idea
-
 ::: callout-tip
 ### TL;DR – The Purpose includes
 
@@ -13,6 +11,8 @@
 The purpose defines the model’s role in the research — its "why", "focus" and "approach".
 :::
 
+## Idea
+
 ODD starts with a concise and specific statement of the purpose(s) for which the model was developed. This should be a clear question, problem, or hypothesis. The purpose assigns your model to a **general purpose first**, e.g.
 
 -   prediction
@@ -22,7 +22,7 @@ ODD starts with a concise and specific statement of the purpose(s) for which the
 -   illustration
 -   analogy
 -   social learning
--   ..
+-   ...
 
 **Identify one or more of these categories before you state the specific purpose of your model.**
 
@@ -111,44 +111,41 @@ The section *Purpose* of your ODD should contain:
 ``` {style="border "}
 ```
 
-## Examples of Model Purposes
+## Examples
+
+### ... of Model Purposes
 
 **Specific model purposes** assigned to three **general purposes** identified by Edmonds et al. (2019)
 
--   ***prediction*** ("data that is not currently known to a useful degree of accuracy *via computations using the model*", Carter et al. 2015)
+**Prediction** ("data that is not currently known to a useful degree of accuracy via computations using the model", Carter et al. 2015)
 
 > The proximate purpose of the model is to predict the dynamics of the number, location, and size of tiger territories in response to habitat quality and tiger density… The ultimate purpose of the model,
 
--   ***explanation*** ("find a possible causal chain from a set-up to its consequences ", after DeAngelis et al. 1980)
+**Explanation** ("find a possible causal chain from a set-up to its consequences ", after DeAngelis et al. 1980)
 
 > The purpose of this model is to illustrate a potential explanation for how small changes in the initial size distribution and growth of a cohort of cannibalistic fish can produce large differences in later size distribution, an example of how positive feedback can cause rapid divergence within a system. The mechanism driving the potential explanation is interaction among slow growth from feeding on invertebrates, rapid growth from cannibalism, and “gape limitation” which allows one fish to eat another only if the two fish are sufficiently different in size.
 
--   ***description*** (“what is important of a specific observed case”, Arfaoui et al. 2014) .
+**Description** (“what is important of a specific observed case”, Arfaoui et al. 2014) .
 
 > The purpose of our model is to understand how different configurations in the policy design of REACH affect the dynamics of eco-innovation and shape market selection and innovation. In our model we take into account supplier–user interactions because they represent an essential element in the development of new technologies, particularly in the chemical industry. Additionally, some stylized facts that illustrate the competition between organic solvents and biosolvents in the surface treatment activity are considered. The objective is to examine to which extent different combinations of flexible and stringent instruments of REACH can lead to the development and diffusion of alternative solvents (biosolvents)
 
-## Examples of Model Patterns
+### ... of Model Patterns
 
-***Qualitative patterns***
-
--   vertical migration by Daphnia (Railsback, S. F. and B. C. Harvey. 2020)
+**Qualitative patterns**; vertical migration by Daphnia (Railsback, S. F. and B. C. Harvey. 2020)
 
 > The purpose of this model is to explain and understand diurnal vertical migration (VM) in zooplankton and how it interacts with a life history tradeoff, the allocation of mass to reproduction or growth. .. We evaluate our model by its ability to reproduce three patterns. The first two are of primary importance because they were observed in extensive laboratory experiments by Loose and Dawidowicz (1994) and appear driven directly by the risk-growth tradeoff (Figure 5.1)… Pattern 1: Response of VM to predation risk. .. Pattern 2. Selection of slightly shallower depths with low food. ... Pattern 3. Response of reproductive allocation to predation risk. …
 
-***Quantitative patterns***
+**Quantitative patterns**
 
 -   ???
 
-## Examples of Model Types
+### ... of Model Types
 
 -   ???
 
-``` {style="border "}
-```
 
-::: callout-tip
+::: {.dg-box .dg-box--border-left}
 ## Key takeaways
-
 1.  **Patterns are observations not Mechanisms:** they describe *what is observed*, not *how it happens*.
 
 2.  **Qualitative should be testable:** described them with enough detail and context. Run the model under analogous conditions and check if its output matches the described trend(s).
@@ -164,12 +161,13 @@ The section *Purpose* of your ODD should contain:
 
 ## Test yourself
 
+::::: dg-box
 **Task 1: Can you identify what is incorrect in the following description of a model's purpose?**
 
-> The model's purpose is to explore the dynamics of forest ecosystems under climate change. We want to see how different species might respond and if there are any interesting feedback loops. The model considers various tree types, their growth, and competition for resources. We expect to see some changes in forest composition over time. This work is important for understanding ecological resilience.
+The model's purpose is to explore the dynamics of forest ecosystems under climate change. We want to see how different species might respond and if there are any interesting feedback loops. The model considers various tree types, their growth, and competition for resources. We expect to see some changes in forest composition over time. This work is important for understanding ecological resilience.
 
-::: {.callout-caution collapse="true"}
-### Solution
+::: {.callout-note collapse="true"}
+### Hints
 
 Here’s a breakdown of what’s incorrect or could be improved in the example purpose statement, aligned with the guidance provided in Section 1.2:
 
@@ -187,23 +185,31 @@ Here’s a breakdown of what’s incorrect or could be improved in the example p
 **7. Not Specific to This Version:** It doesn't clearly delineate what this particular model aims to achieve versus potential future expansions.
 
 **8. Ambiguous Terms:** "Forest ecosystems," "different species," "various tree types," and "ecological resilience" are all very broad. What specific types of forests, species, or aspects of resilience are being modeled?
+:::
+
+::: {.callout-caution collapse="true"}
+### Solution
 
 A significantly improved (but still hypothetical) version might be:
 
-> The purpose of this model is to test the hypothesis that increased frequency and intensity of drought events, driven by climate change, will lead to a shift in temperate forest composition from drought-sensitive coniferous species to more drought-tolerant deciduous species. Specifically, we aim to explain the observed pattern of increasing deciduous tree dominance in the Pacific Northwest region over the last two decades, and to predict the magnitude of this compositional shift by 2050 under IPCC RCP 8.5 climate projections. The model's suitability will be evaluated by its ability to reproduce two key patterns: (1) the observed decline in average growth rates of Douglas Fir following historical drought years, and (2) the pattern of increased seedling establishment of Oak species in areas previously dominated by coniferous trees after severe droughts.
+*The purpose of this model is to test the hypothesis that increased frequency and intensity of drought events, driven by climate change, will lead to a shift in temperate forest composition from drought-sensitive coniferous species to more drought-tolerant deciduous species. Specifically, we aim to explain the observed pattern of increasing deciduous tree dominance in the Pacific Northwest region over the last two decades, and to predict the magnitude of this compositional shift by 2050 under IPCC RCP 8.5 climate projections. The model's suitability will be evaluated by its ability to reproduce two key patterns: (1) the observed decline in average growth rates of Douglas Fir following historical drought years, and (2) the pattern of increased seedling establishment of Oak species in areas previously dominated by coniferous trees after severe droughts.*
 :::
+:::::
 
+:::: dg-box
 **Task 2: Which of the statements describes the observational patterns correctly?**
 
-> (a) "The model shows the detection of daphnia kairomones which induces the VM to mimize predation risk.
-> (b) "The model reproduces the response of VM to predation risk"
+(a) "The model shows the detection of daphnia kairomones which induces the VM to mimize predation risk.
+(b) "The model reproduces the response of VM to predation risk"
 
 ::: {.callout-caution collapse="true"}
 ### Solution
 
 \(b\) is correct. The model's purpose is to *explain* the VM patterns using its mechanisms, but the patterns themselves are the observed phenomena.
 :::
+::::
 
+:::: dg-box
 **Task 3:** Select those specific purposes which are too vague and rewrite them (if the context allows you).
 
 > 1.  The model demonstrates a home range shrinking of caribou with decreasing food availability due to habitat shifts.
@@ -221,3 +227,4 @@ A significantly improved (but still hypothetical) version might be:
 2.  the "typical diameter distribution" should be explicitly stated, e.g., "the J-shape distribution in the regeneration areas; the "u-shape distribution for the mature forest area".
 3.  Such statements should be generally avoided.
 :::
+::::
