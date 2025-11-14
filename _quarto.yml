@@ -7,16 +7,17 @@ execute:
   
 book:
   title: "ODD Training Material"
-  page-footer:
-    left: |
-      ODD Training Material is compiled by TEAM.
-    right: |
-      This book was built with <a href="https://quarto.org/">Quarto</a>.
-  site-url: https://...
-  repo-url: https://...
-  repo-branch: main
-  repo-actions: [edit, issue]
+  sidebar:
+    style: "docked"
+    background: light
+    collapse-level: 4
   
+  site-url: https://mcwimm.github.io/
+  repo-url: https://github.com/mcwimm/training4ODD
+  repo-branch: main
+  repo-actions: [source, edit, issue]
+  downloads: [pdf, epub]
+
   chapters:
     - index.qmd
     - part: chapters/overview/overview.qmd
@@ -36,7 +37,16 @@ book:
         - chapters/details/submodels.qmd
     - part: chapters/examples/examples.qmd
     - references.qmd
+    
+  page-footer:
+    left: |
+      ODD Training Material is compiled by TEAM.
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
 
+comments:
+  hypothesis: true
+  
 bibliography: references.bib
 
 format:
@@ -44,6 +54,7 @@ format:
     theme:
       - cosmo
       - brand
+    css: styles.css
 
 editor: visual
 
