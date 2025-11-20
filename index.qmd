@@ -50,7 +50,6 @@ The tutorial goes sequentially through the three sections of the protocol: [**O*
 -   *Test yourself*
 
 ::: callout-important
-Since ODD was developed for ABM, many examples are taken from this model type. To promote the application to HNS models in general, we tried to give also examples for other models types. Since our background is nevertheless domain specific, this did not work for all parts and we count on your feedback[^index-1] and contribution. Open Science is a community effort. So let's develop this tutorial in that spirit.
+Since ODD was developed for ABM, many examples are taken from this model type. To promote the application to HNS models in general, we tried to give also examples for other models types. Since our background is nevertheless domain specific, this did not work for all parts and we count on your feedback and contribution. Open Science is a community effort. So let's develop this tutorial in that spirit.
 :::
 
-[^index-1]: Do we want provide a link to a forum or an E-Mail address for feedback? I think this is reasonable and good for the ODD development, but this is also much work. What do you think?
