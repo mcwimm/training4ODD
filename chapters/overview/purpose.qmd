@@ -34,9 +34,6 @@ For most **specific purposes**, the model will be assumed useful only if it can 
 Patterns can be observations from the real system being modeled, obtained from data or literature. For models not based on a specific real system, the patterns are often general beliefs about how the system and its agents should behave. You find a very good overview about empirical patterns useful for predictive models here: [@gallagher2021]
 :::
 
-``` {style="border "}
-```
-
 ## Guidance
 
 **The purpose**
@@ -47,8 +44,7 @@ Patterns can be observations from the real system being modeled, obtained from d
 
 [^purpose-1]: Ideally the model should only include entities and mechanisms that are necessary to meet its purpose.
 
-``` {style="border "}
-```
+### What should be included?
 
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | What should be included?                                           | How?                                                                                                                                                                                                                                                                               |
@@ -76,13 +72,9 @@ Patterns can be observations from the real system being modeled, obtained from d
 | **Model type**                                                     | The model family (e.g., agent-based, species distribution, partikel flow) prepares for subsequent specifics in the scales and the design.                                                                                                                                          |
 +--------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-``` {style="border "}
-```
+### Pitfalls
 
 An imprecise purpose is often an indication that the modeler simply assembled some mechanisms in an ABM and explored its results. Studies like this can be made more scientific by stating the purpose as a clear question such as “To test whether the mechanisms A, B, and C can explain the observed phenomena X, Y, and Z.”
-
-``` {style="border "}
-```
 
 +------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | Typical pitfalls of the purpose statement                                                      | The Problem                                                         |
@@ -96,9 +88,6 @@ An imprecise purpose is often an indication that the modeler simply assembled so
 | Example: "it reproduces the system dynamics".                                                  | It is difficult to justify (and understand) model design decisions. |
 +------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
-``` {style="border "}
-```
-
 ## Checklist
 
 The section *Purpose* of your ODD should contain:
@@ -111,41 +100,55 @@ The section *Purpose* of your ODD should contain:
 ``` {style="border "}
 ```
 
-## Examples
+## Examples ...
 
 ### ... of Model Purposes
 
-**Specific model purposes** assigned to three **general purposes** identified by Edmonds et al. (2019)
+**Specific model purposes** assigned to three **general purposes** identified by Edmonds et al. (2019):
+
+::: panel-tabset
+#### Prediction
 
 **Prediction** ("data that is not currently known to a useful degree of accuracy via computations using the model", Carter et al. 2015)
 
-> The proximate purpose of the model is to predict the dynamics of the number, location, and size of tiger territories in response to habitat quality and tiger density… The ultimate purpose of the model,
+*The proximate purpose of the model is to predict the dynamics of the number, location, and size of tiger territories in response to habitat quality and tiger density… The ultimate purpose of the model, ???*
+
+#### Explanation
 
 **Explanation** ("find a possible causal chain from a set-up to its consequences ", after DeAngelis et al. 1980)
 
-> The purpose of this model is to illustrate a potential explanation for how small changes in the initial size distribution and growth of a cohort of cannibalistic fish can produce large differences in later size distribution, an example of how positive feedback can cause rapid divergence within a system. The mechanism driving the potential explanation is interaction among slow growth from feeding on invertebrates, rapid growth from cannibalism, and “gape limitation” which allows one fish to eat another only if the two fish are sufficiently different in size.
+*The purpose of this model is to illustrate a potential explanation for how small changes in the initial size distribution and growth of a cohort of cannibalistic fish can produce large differences in later size distribution, an example of how positive feedback can cause rapid divergence within a system. The mechanism driving the potential explanation is interaction among slow growth from feeding on invertebrates, rapid growth from cannibalism, and “gape limitation” which allows one fish to eat another only if the two fish are sufficiently different in size.*
+
+#### Description
 
 **Description** (“what is important of a specific observed case”, Arfaoui et al. 2014) .
 
-> The purpose of our model is to understand how different configurations in the policy design of REACH affect the dynamics of eco-innovation and shape market selection and innovation. In our model we take into account supplier–user interactions because they represent an essential element in the development of new technologies, particularly in the chemical industry. Additionally, some stylized facts that illustrate the competition between organic solvents and biosolvents in the surface treatment activity are considered. The objective is to examine to which extent different combinations of flexible and stringent instruments of REACH can lead to the development and diffusion of alternative solvents (biosolvents)
+*The purpose of our model is to understand how different configurations in the policy design of REACH affect the dynamics of eco-innovation and shape market selection and innovation. In our model we take into account supplier–user interactions because they represent an essential element in the development of new technologies, particularly in the chemical industry. Additionally, some stylized facts that illustrate the competition between organic solvents and biosolvents in the surface treatment activity are considered. The objective is to examine to which extent different combinations of flexible and stringent instruments of REACH can lead to the development and diffusion of alternative solvents (biosolvents)*
+:::
 
 ### ... of Model Patterns
 
+::: panel-tabset
+#### Qualitative patterns
+
 **Qualitative patterns**; vertical migration by Daphnia (Railsback, S. F. and B. C. Harvey. 2020)
 
-> The purpose of this model is to explain and understand diurnal vertical migration (VM) in zooplankton and how it interacts with a life history tradeoff, the allocation of mass to reproduction or growth. .. We evaluate our model by its ability to reproduce three patterns. The first two are of primary importance because they were observed in extensive laboratory experiments by Loose and Dawidowicz (1994) and appear driven directly by the risk-growth tradeoff (Figure 5.1)… Pattern 1: Response of VM to predation risk. .. Pattern 2. Selection of slightly shallower depths with low food. ... Pattern 3. Response of reproductive allocation to predation risk. …
+*The purpose of this model is to explain and understand diurnal vertical migration (VM) in zooplankton and how it interacts with a life history tradeoff, the allocation of mass to reproduction or growth. .. We evaluate our model by its ability to reproduce three patterns. The first two are of primary importance because they were observed in extensive laboratory experiments by Loose and Dawidowicz (1994) and appear driven directly by the risk-growth tradeoff (Figure 5.1)… Pattern 1: Response of VM to predation risk. .. Pattern 2. Selection of slightly shallower depths with low food. ... Pattern 3. Response of reproductive allocation to predation risk. …*
 
-**Quantitative patterns**
+#### Quantitative patterns
+
+**Quantitative patterns** ....
 
 -   ???
+:::
 
 ### ... of Model Types
 
 -   ???
 
-
 ::: {.dg-box .dg-box--border-left}
 ## Key takeaways
+
 1.  **Patterns are observations not Mechanisms:** they describe *what is observed*, not *how it happens*.
 
 2.  **Qualitative should be testable:** described them with enough detail and context. Run the model under analogous conditions and check if its output matches the described trend(s).
@@ -212,13 +215,10 @@ A significantly improved (but still hypothetical) version might be:
 :::: dg-box
 **Task 3:** Select those specific purposes which are too vague and rewrite them (if the context allows you).
 
-> 1.  The model demonstrates a home range shrinking of caribou with decreasing food availability due to habitat shifts.
->
-> 2.  Typical stem diameter distributions should be reproduced.
->
-> 3.  The model predicts the impact of sanitation felling on the spatial pattern on bark beetle infestion on spruce trees in the national park.
->
-> 4.  The model produces interesting results which are known from systems dynamics.
+1.  The model demonstrates a home range shrinking of caribou with decreasing food availability due to habitat shifts.
+2.  Typical stem diameter distributions should be reproduced.
+3.  The model predicts the impact of sanitation felling on the spatial pattern on bark beetle infestion on spruce trees in the national park.
+4.  The model produces interesting results which are known from systems dynamics.
 
 ::: {.callout-caution collapse="true"}
 ### Solution
