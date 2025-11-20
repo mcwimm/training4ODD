@@ -26,18 +26,18 @@ The **Open Modelling Foundation** ([OMF](https://www.openmodelingfoundation.org)
 ::: {.callout-note collapse="true"}
 ## What is the ODD protocol?
 
-The [**O**]{.underline}verview, [**D**]{.underline}esign concepts and [**D**]{.underline}etails (ODD) protocol introduced for describing Individual- and Agent-Based Models (ABMs) in [@Grimm2006] and updated in [@Grimm2010] and [@grimm2020], is widely accepted and used to document ABMs in journal articles. It is a standardized document providing a consistent, logical and readable account of the structure and dynamics of ABMs.
+The [**O**]{.underline}verview, [**D**]{.underline}esign concepts and [**D**]{.underline}etails (ODD) protocol introduced for describing Individual- and Agent-Based Models (ABMs) in [@Grimm2006] and updated in [@Grimm2010] and [@Grimm2020], is widely accepted and used to document ABMs in journal articles. It is a standardized document providing a consistent, logical and readable account of the structure and dynamics of ABMs.
 :::
 
 Its suitability to describe HNS models (any type of complex computational models developed for environmental systems) has still to be tested. Many parts of it will probably work well while others have to be adjusted. With this online tutorial, we want contribute to this process.
 
 ## How is this tutorial organised?
 
-This training material is based on @grimm2020 and partly comprises the detailed descriptions provided in Appendix S1. We expand on this material by providing tests and examples of the usage of ODD for different model types (i.e., not only agent-based models, but also data-driven and hybrid models).
+This training material is based on @Grimm2020 and partly comprises the detailed descriptions provided in Appendix S1. We expand on this material by providing tests and examples of the usage of ODD for different model types (i.e., not only agent-based models, but also data-driven and hybrid models).
 
 The tutorial goes sequentially through the three sections of the protocol: [**O**]{.underline}verview, [**D**]{.underline}esign concepts and [**D**]{.underline}etails:
 
-![Structure of the ODD protocol adapted after[@grimm2020]. The term model type was added in the overview since this meta-data is important for subsequent information.](images/ODD.png)
+![Structure of the ODD protocol adapted after[@Grimm2020]. The term model type was added in the overview since this meta-data is important for subsequent information.](images/ODD.png)
 
 **Each element** of the main sections is addressed by a **separate chapter**. They all follow the same **structure**:
 
